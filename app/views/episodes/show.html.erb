@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%= @episode.title %>
+</p>
+
+<p>
+  <b>Permalink:</b>
+  <%= @episode.permalink %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @episode.description %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @episode.notes %>
+</p>
+
+<p>
+  <b>Aired on:</b>
+  <%= @episode.aired_on %>
+</p>
+
+<p>
+  <b>Published:</b>
+  <%= @episode.published %>
+</p>
+
+
+<%= link_to 'Edit', edit_episode_path(@episode) %> |
+<%= link_to 'Back', episodes_path %>

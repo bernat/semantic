@@ -1,0 +1,33 @@
+<h1>Listing episodes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Permalink</th>
+    <th>Description</th>
+    <th>Notes</th>
+    <th>Aired on</th>
+    <th>Published</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @episodes.each do |episode| %>
+  <tr>
+    <td><%= episode.title %></td>
+    <td><%= episode.permalink %></td>
+    <td><%= episode.description %></td>
+    <td><%= episode.notes %></td>
+    <td><%= episode.aired_on %></td>
+    <td><%= episode.published %></td>
+    <td><%= link_to 'Show', episode %></td>
+    <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
+    <td><%= link_to 'Destroy', episode, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New episode', new_episode_path %>
