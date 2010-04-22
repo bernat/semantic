@@ -1,7 +1,7 @@
 <div id="episodes">
   <% @episodes.each do |episode| %>
     <% div_for(episode) do %>
-			<p style="float:right;color:gray;"><%="#{episode.aired_on}"%></p>
+			<p style="float:right;color:gray;font-size:18px;"><%="#{episode.aired_on}"%></p>
       <h3><%= link_to "#{episode.title}", episode %></h3>
       <p><%= episode.description %></p>
       <p><%= episode.notes %></p>
