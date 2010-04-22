@@ -3,21 +3,38 @@
 <head>
   <title>semàntic podcast</title>
   <%= stylesheet_link_tag 'application', 'grid' %>
-  <%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery-rails.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div class="row">
-    <div id="header" class="column grid_8">
+	  <div id="admin" class="column grid_12">
+      <%= yield :admin %>
+    </div>
+  
+    <div id="header" class="column grid_12">
       <h1><%= link_to "semàntic", root_path %></h1>
       <h2><%= link_to "podcast", root_path %></h2>
     </div>
-    <div id="admin" class="column grid_4">
-      <%= yield :admin %>
-    </div>
   </div>
+	
 
-  <div class="row">
+	<div id="presentationbox" class="row">
+		<div class="column grid_12">
+			<div class="presentation">
+				<p class="prestext">Benvinguts al <b>podcast</b> <b style="color:#333333">semantic</b>!</p>
+				<p class="prestext">Tertúlia informàtica i tecnològica de la mà de <a href="http://bernatfarrero.com"><b>Bernat Farrero</b></a> i <a href="http://jrom.net"><b>Jordi Romero</b></a>.</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="column grid_12">
+			<p>Aquests són els últims programes emesos:</p>
+		</div>
+	</div>
+
+  <div id="main" class="row">
     <div class="column grid_12">
       <p class="notice"><%= notice %></p>
       <%= yield %>
