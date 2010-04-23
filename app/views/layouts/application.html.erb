@@ -18,27 +18,16 @@
     </div>
   </div>
 	
-
-	<div id="presentationbox" class="row">
-		<div class="column grid_12">
-			<div class="presentation">
-				<p class="prestext">Benvinguts al <b>podcast</b> <b style="color:#333333">semantic</b>!</p>
-				<p class="prestext">Tertúlia informàtica i tecnològica de la mà de <a href="http://bernatfarrero.com"><b>Bernat Farrero</b></a> i <a href="http://jrom.net"><b>Jordi Romero</b></a>.</p>
-			</div>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="column grid_12">
-			<p>Aquests són els últims programes emesos:</p>
-		</div>
-	</div>
-
+	<%= render :partial => "shared/presentationbox" %>
   <div id="main" class="row">
-    <div class="column grid_12">
+    <div class="column grid_9">
       <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
+
+		<div id="sidebar" class="column grid_3">
+			<h3>Sidebar</h3>
+		</div>
   </div>
 
 

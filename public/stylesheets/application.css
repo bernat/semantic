@@ -21,25 +21,29 @@ pre {
   font-size: 11px;
 }
 
-a { color: #333; }
-a:visited { color: #333; }
-a:hover { color: #333; }
+a { color: #444; }
+a:visited { color: #444; }
+a:hover { color: red; }
 
-div.field, div.actions {
+div.field, div.actions 
+{
   margin-bottom: 10px;
 }
 
-.notice {
+.notice 
+{
   color: green;
 }
 
-.fieldWithErrors {
+.fieldWithErrors 
+{
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-#errorExplanation {
+#errorExplanation 
+{
   width: 400px;
   border: 2px solid red;
   padding: 7px;
@@ -48,7 +52,8 @@ div.field, div.actions {
   background-color: #f0f0f0;
 }
 
-#errorExplanation h2 {
+#errorExplanation h2 
+{
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
@@ -58,13 +63,15 @@ div.field, div.actions {
   color: #fff;
 }
 
-#errorExplanation p {
+#errorExplanation p 
+{
   color: #333;
   margin-bottom: 0;
   padding: 5px;
 }
 
-#errorExplanation ul li {
+#errorExplanation ul li 
+{
   font-size: 12px;
   list-style: square;
 }
@@ -74,19 +81,31 @@ div.field, div.actions {
 {
 	display: block;
 }
+
 #header h1, #header h2
 {
 	display: inline;
 	font-size: 50px;
 }
+
 #header h1 a
 {
 	color: #000000;
 }
 
+#header h1 a:hover 
+{
+	color: red;
+}
+
 #header h2 a
 {
 	color: #333333;
+}
+
+#header h2 a:hover 
+{
+	color: black;
 }
 
 #header a
@@ -103,13 +122,27 @@ div.field, div.actions {
 .episode
 {
 	padding: 2px 20px 20px 20px;
-	background: #eeeeee;
+	margin-bottom: 10px;
 	
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	
 }
+
+.data {
+	float:right;
+	color:gray;
+	font-size:18px;
+}
+
+.parell {
+	background: #c0deed;
+}
+
+.senar {
+	background: #bfffe8;
+}
+
 #admin
 {
 	text-align: right;
@@ -123,7 +156,7 @@ div.field, div.actions {
 	background: #c0deed;
 	padding: 2px 20px 20px 20px;
 	min-height: 100px;
-	margin-top: 20px;
+
 
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;

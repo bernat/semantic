@@ -1,7 +1,14 @@
+
+<div class="row">
+	<div class="column grid_12">
+		<p>Aquests són els últims programes emesos:</p>
+	</div>
+</div>
+
 <div id="episodes">
   <% @episodes.each do |episode| %>
-    <% div_for(episode) do %>
-			<p style="float:right;color:gray;font-size:18px;"><%="#{episode.aired_on}"%></p>
+    <% div_for(episode, :class => cycle('senar', 'parell')) do %>
+			<p class="data">Fa <%=time_ago_in_words(episode.aired_on)%></p>
       <h3><%= link_to "#{episode.title}", episode %></h3>
       <p><%= episode.description %></p>
       <p><%= episode.notes %></p>
