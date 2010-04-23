@@ -113,6 +113,44 @@ div.field, div.actions
 	text-decoration: none;
 }
 
+#sidebar 
+{
+	margin-top: 20px;
+}
+
+#sidebar h1
+{
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 25px;
+}
+
+#sidebar ul
+{
+	list-style-type: none;
+}
+
+#sidebar a
+{
+	text-decoration: none;
+	color: #333;
+}
+
+#sidebar li
+{
+	line-height: 16px;
+	padding: 10px 10px 10px 20px;
+	width: 100px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin-left: -30px;
+
+}
+#sidebar li:hover
+{
+	background: #eeeeee;
+}
 
 #episodes
 {
@@ -136,11 +174,11 @@ div.field, div.actions
 }
 
 .parell {
-	background: #c0deed;
+	background: #eeeeee;
 }
 
 .senar {
-	background: #bfffe8;
+	background: #ffefef;
 }
 
 #admin
@@ -148,10 +186,13 @@ div.field, div.actions
 	text-align: right;
 }
 
-/*#triangle {
-	background-image: url('images/top.png') no-repeat top;
+#triangle 
+{
+	background: url('../images/top.png') no-repeat top 3%;
+	height: 25px;
+	margin-top: -20px;
 }
-*/
+
 .presentation {
 	background: #c0deed;
 	padding: 2px 20px 20px 20px;
@@ -164,5 +205,5 @@ div.field, div.actions
 }
 
 .prestext {
-	font-size: 22px;		  
+	font-size: 20px;		  
 }

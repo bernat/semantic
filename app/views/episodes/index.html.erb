@@ -1,10 +1,3 @@
-
-<div class="row">
-	<div class="column grid_12">
-		<p>Aquests són els últims programes emesos:</p>
-	</div>
-</div>
-
 <div id="episodes">
   <% @episodes.each do |episode| %>
     <% div_for(episode, :class => cycle('senar', 'parell')) do %>

@@ -11,23 +11,27 @@
 	  <div id="admin" class="column grid_12">
       <%= yield :admin %>
     </div>
-  
+
+
     <div id="header" class="column grid_12">
       <h1><%= link_to "semàntic", root_path %></h1>
       <h2><%= link_to "podcast", root_path %></h2>
     </div>
   </div>
+
+	<div id="triangle" class="row">
+	  <div id="triangle" class="column"></div>
+	</div>
 	
 	<%= render :partial => "shared/presentationbox" %>
   <div id="main" class="row">
-    <div class="column grid_9">
+    <div class="column grid_10">
       <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
+		
+	<%= render :partial => "shared/sidebar" %>
 
-		<div id="sidebar" class="column grid_3">
-			<h3>Sidebar</h3>
-		</div>
   </div>
 
 
