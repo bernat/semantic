@@ -7,6 +7,10 @@ body, p, ol, ul, td {
 	margin: 20px 0 0 0;
 }
 
+.small {
+	font-size: 12px;
+}
+
 h3 {
 	font-size: 20px;
 }
@@ -155,6 +159,7 @@ div.field, div.actions
 #episodes
 {
 	margin: 20px 0;
+	text-align: justify;
 }
 
 .episode

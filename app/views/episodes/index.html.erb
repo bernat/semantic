@@ -1,12 +1,17 @@
 <div id="episodes">
   <% @episodes.each do |episode| %>
     <% div_for(episode, :class => cycle('senar', 'parell')) do %>
-			<p class="data">Fa <%=time_ago_in_words(episode.aired_on)%></p>
+			<p class="data">Fa <%=time_ago_in_words(episode.aired_on)%>
+				<br />
+				<span class="small">
+				<%= link_to 'Modifica', edit_episode_path(episode) %>
+      	| <%= link_to 'Elimina', episode, :confirm => 'Are you sure?', :method => :delete %>			
+				</span>
+			</p>
       <h3><%= link_to "#{episode.title}", episode %></h3>
+			<br />
       <p><%= episode.description %></p>
-      <p><%= episode.notes %></p>
-      <%= link_to 'Edit', edit_episode_path(episode) %>
-      | <%= link_to 'Destroy', episode, :confirm => 'Are you sure?', :method => :delete %>
+      <p><%= link_to "Veure notes del podcast", episode if episode.notes %></p>
     <% end %>
   <% end %>
 
