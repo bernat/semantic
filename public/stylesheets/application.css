@@ -27,7 +27,7 @@ pre {
 
 a { color: #444; }
 a:visited { color: #444; }
-a:hover { color: red; }
+a:hover { color: #FF4400; }
 
 div.field, div.actions 
 {
@@ -109,7 +109,7 @@ div.field, div.actions
 
 #header h2 a:hover 
 {
-	color: black;
+	color: #ff4400;
 }
 
 #header a
@@ -166,7 +166,7 @@ div.field, div.actions
 {
 	padding: 2px 20px 20px 20px;
 	margin-bottom: 10px;
-	
+	text-align: justify;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
@@ -202,8 +202,6 @@ div.field, div.actions
 	background: #c0deed;
 	padding: 2px 20px 20px 20px;
 	min-height: 100px;
-
-
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;	

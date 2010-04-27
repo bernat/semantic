@@ -23,3 +23,29 @@ $.tools.tooltip.addEffect("bouncy",
         }); 
     } 
 );
+
+
+// /* Overlays */
+// 
+// // execute your scripts when the DOM is ready. this is a good habit 
+// $(function() { 
+//  
+//     // assign a click event to the exposed element, using normal jQuery coding 
+//     $("#presentationbox").mouseover(function() { 
+// 
+//         // perform exposing for the clicked element 
+//         api1 = $(this).expose({api: true}).load(); 				
+// 				api1.close().delay(500);
+//     }); 
+// });
+// 
+// $(function() { 
+//  
+//     // assign a click event to the exposed element, using normal jQuery coding 
+//     $("#episodes").mouseover(function() { 
+//  
+// 			  // perform exposing for the clicked element 
+//         api2 = $(this).expose({api: true}).load(); 
+// 				api2.close().delay(500);
+//     }); 
+// });

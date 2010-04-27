@@ -1,32 +1,23 @@
+<div class="episode senar">
+<p class="data">
+  Emès el dia
+  <%= @episode.aired_on.strftime('%d/%m/%Y') %>
+</p>
+
 <h1>
   <%= @episode.title %>
 </h1>
 
-<p>
-  <b>Permalink:</b>
-  <%= @episode.permalink %>
-</p>
+<br />
 
-<p>
-  <b>Description:</b>
-  <%= @episode.description %>
-</p>
+<%= @episode.description %>
 
-<p>
-  <b>Notes:</b>
-  <%= @episode.notes %>
-</p>
+<p> <b>Notes de l'episodi:</b></p>
+  <%= @episode.notes if !@episode.notes.blank? %>
 
-<p>
-  <b>Aired on:</b>
-  <%= @episode.aired_on %>
-</p>
-
-<p>
-  <b>Published:</b>
-  <%= @episode.published %>
-</p>
-
-
-<%= link_to 'Edit', edit_episode_path(@episode) %> |
-<%= link_to 'Back', episodes_path %>
+<br /><br />
+<span style="float:right;">
+	<%= link_to 'Modifica', edit_episode_path(@episode) %> |
+	<%= link_to 'Enrere', episodes_path %>
+</span>
+</div>
