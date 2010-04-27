@@ -6,7 +6,7 @@ class EpisodesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @episodes }
+      format.rss
     end
   end
 

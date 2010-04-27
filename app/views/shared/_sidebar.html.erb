@@ -1,11 +1,8 @@
 <div id="sidebar" class="column grid_2">
-
-
-	
-	<a title="Subscriu-te al nostre programa i rebràs les últimes actualitzacions directament al teu ordinador o mòbil!" href="/episodes.xml">
+  <%= link_to episodes_path(:format => :rss), :title => "Subscriu-te al nostre programa i rebràs les últimes actualitzacions directament al teu ordinador o mòbil!" do %>
 		<p style="font-size: 18px;">Subscriu-te!
 		<%= image_tag("rss.png", :style => "float:left;padding-right:5px;") %></p>
-	</a>
+	<% end %>
 	
 	<br /><br />
 	<h1>Sponsors</h1>
