@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
   # GET /episodes
   # GET /episodes.xml
   def index
