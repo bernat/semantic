@@ -1,0 +1,13 @@
+  <h4>Enter your comment</h4>
+  <% form_for @comment,:html => {:class => "ajaxForm"} do |f| -%>
+			<%= f.hidden_field :episode_id %>
+			<%= f.text_field :name %>
+			<%= f.text_field :email %>
+			<%= f.text_field :subject %>
+      <%= f.text_area :content %>
+      <div class="buttons">
+          <%= link_to 'Cancel',episode_path %>
+          <%= f.submit("Add my comment") %>
+      </div>
+  <% end -%>
+

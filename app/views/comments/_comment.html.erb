@@ -1,0 +1,7 @@
+<div id="comment<%= comment.id %>">
+<%=  content_tag(:p, comment.body) %>
+<p><%= link_to 'delete comment',comment_path(comment),:method => :delete,:class => "delete"  %></p>
+<p><%= comment.created_at %></p>
+<hr />
+</div>
+

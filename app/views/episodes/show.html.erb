@@ -16,6 +16,11 @@
   <%= @episode.notes if !@episode.notes.blank? %>
 
 <br /><br />
+
+<%= render @episode.comments %>
+
+
+
 <span style="float:right;">
 	<%= link_to 'Modifica', edit_episode_path(@episode) %> |
 	<%= link_to 'Enrere', episodes_path %>
