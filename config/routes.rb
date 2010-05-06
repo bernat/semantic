@@ -1,8 +1,9 @@
 Semantic::Application.routes.draw do |map|
 
-  resources :episodes do 
-    resources :comments
-  end
+  resources :comments
+  resources :episodes 
+
+
   
   root :to => "episodes#index"
 

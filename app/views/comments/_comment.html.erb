@@ -1,7 +1,10 @@
 <div id="comment<%= comment.id %>">
-<%=  content_tag(:p, comment.body) %>
-<p><%= link_to 'delete comment',comment_path(comment),:method => :delete,:class => "delete"  %></p>
-<p><%= comment.created_at %></p>
+<span style="float:right;"><%= link_to 'esborra',comment_path(comment), :method => :delete, :class => "delete", :remote => true  %></span>
+
+<p><b><%= comment.name %></b> el dia <%= comment.created_at.strftime('%d/%m/%Y')%> a les <%= comment.created_at.strftime('%H:%M') %> ha escrit:</p>
+
+<%=  content_tag(:p, comment.content) %>
+
 <hr />
 </div>
 

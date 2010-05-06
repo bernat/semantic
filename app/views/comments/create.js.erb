@@ -1,9 +1,6 @@
-//We hide the message saying no comment if present
-$(".comments h3").hide();
-//Hide the comment form
-$(".newComment").html("<%= escape_javascript(new_comment_link()) %>");
-//Display the new comment
-$(".comments").append("<%= escape_javascript(render :partial => @comment) %>");
-//Ajaxify the new links
-ajaxLinks();
+$("#comments_count").before('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
+$("#comments_count").html("<%= pluralize(@comment.episode.comments.count, 'Comentari') %>");
+$("#new_comment").before("<%= escape_javascript(render(:partial => @comment)) %>");
+$("#comment<%=@comment.id%>").effect("highlight", {color: "#88ff88"}, 4000); //No va
+$("#new_comment")[0].reset();
 

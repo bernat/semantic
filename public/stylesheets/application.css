@@ -172,6 +172,10 @@ div.field, div.actions
 	border-radius: 5px;
 }
 
+#comments_count
+{
+	font-size: 22px;
+}
 .data {
 	float:right;
 	color:gray;
