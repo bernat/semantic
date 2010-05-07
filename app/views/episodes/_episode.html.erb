@@ -4,6 +4,7 @@
     Emès el <%= episode.aired_on.strftime("%d/%m/%Y") %>
   </p>
   <h3><%= link_to "\##{episode.id} #{episode.title}", episode %></h3>
+	<br />
   <p><%= episode.description %></p>
   <% if list %>
   <p>
