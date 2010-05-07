@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create!(params[:comment])
-    flash[:notice] = "Comentari afegit"
+    flash[:notice] = "Gràcies per comentar!"
     respond_to do |format|
       format.html { redirect_to episode_path(@comment.episode) }
       format.js 
