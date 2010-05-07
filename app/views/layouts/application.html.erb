@@ -3,42 +3,41 @@
 <head>
   <title>semàntic podcast</title>
   <%= stylesheet_link_tag 'application', 'grid' %>
-	<%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
-	<%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>
-	<%= javascript_include_tag	"http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js" %>
-	<%= javascript_include_tag "jquery-rails.js" %>
-	<%= javascript_include_tag "efectes.js" %>
+  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>
+  <%= javascript_include_tag	"http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js" %>
+  <%= javascript_include_tag "jquery-rails.js" %>
+  <%= javascript_include_tag "efectes.js" %>
 
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div class="row">
-	  <div id="admin" class="column grid_12">
+    <div id="admin" class="column grid_12">
       <%= yield :admin %>
     </div>
-
-
     <div id="header" class="column grid_12">
       <h1><%= link_to "semàntic", root_path %></h1>
       <h2><%= link_to "podcast", root_path %></h2>
     </div>
   </div>
 
-	<div id="triangle" class="row">
-	  <div id="triangle" class="column"></div>
-	</div>
-	
-	<%= render :partial => "shared/presentationbox" %>
+  <div id="triangle" class="row">
+    <div id="triangle" class="column"></div>
+  </div>
+
+  <%= render "shared/presentationbox" %>
+
   <div id="main" class="row">
     <div class="column grid_10">
       <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
-		
-	<%= render :partial => "shared/sidebar" %>
+
+    <%= render "shared/sidebar" %>
 
   </div>
 
-	<%= render :partial => "shared/analytics" %>
+  <%= render "shared/analytics" %>
 </body>
 </html>
