@@ -1,25 +1,8 @@
-<div class="episode senar">
-<p class="data">
-  Emès el dia
-  <%= @episode.aired_on.strftime('%d/%m/%Y') %>
-</p>
-
-<h1>
-  <%= @episode.title %>
-</h1>
-
-<br />
-
-<%= @episode.description %>
-
-<p> <b>Notes de l'episodi:</b></p>
-  <%= @episode.notes if !@episode.notes.blank? %>
-
-<br /><br />
+<%= render :partial => @episode, :locals => { :list => false } %>
 
 <div id="comments">
-  <span id="comments_count"><%= @episode.comments.count %> Comentaris</span>
-  <%= render :partial => @episode.comments %>
+  <span id="comments_count"><%= pluralize(@episode.comments.count, "Comentari") %></span>
+  <%= render @episode.comments %>
 </div>
 
 <div id="comment-notice"></div>
@@ -41,3 +24,8 @@
 	<%= link_to 'Enrere', episodes_path %>
 </span>
 </div>
+
+<%= content_for :admin do %>
+  <%= link_to 'Modifica episodi', edit_episode_path(@episode) %>
+  | <%= link_to 'Elimina', @episode, :confirm => 'Segur?', :method => :delete %>
+<% end %>

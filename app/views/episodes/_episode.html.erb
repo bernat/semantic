@@ -1,0 +1,16 @@
+<%= div_for episode, :class => cycle('senar', 'parell') do %>
+  <p class="data">Fa <%=time_ago_in_words(episode.aired_on)%></p>
+  <h3><%= link_to "#{episode.title}", episode %></h3>
+  <p><%= episode.description %></p>
+  <% if list %>
+  <p>
+    <%= link_to "Notes de l'episodi", episode if episode.notes %>
+    | <%= link_to "#{pluralize(episode.comments.count, "Comentari")}", episode %>
+  </p>
+  <% else %>
+    <% unless episode.notes.empty? %>
+      <h4>Notes de l'episodi</h4>
+      <%= episode.notes %>
+    <% end %>
+  <% end %>
+<% end %>
