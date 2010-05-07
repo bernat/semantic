@@ -17,13 +17,10 @@
       <%= yield :admin %>
     </div>
     <div id="header" class="column grid_12">
-      <h1><%= link_to "semàntic", root_path %></h1>
-      <h2><%= link_to "podcast", root_path %></h2>
+      <h1>
+        <%= link_to "semàntic", root_path %><span><%= link_to "podcast", root_path %></span>
+      </h1>
     </div>
-  </div>
-
-  <div id="triangle" class="row">
-    <div id="triangle" class="column"></div>
   </div>
 
   <%= render "shared/presentationbox" %>

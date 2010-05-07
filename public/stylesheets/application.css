@@ -2,6 +2,8 @@ body
 {
   background-color: #fff;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 body, p, ol, ul, td
@@ -9,7 +11,6 @@ body, p, ol, ul, td
   font-family: "Myriad Pro","Myriad Web", helvetica, sans-serif;
   font-size:   14px;
   /*  line-height: 18px;*/
-  margin: 20px 0 0 0;
 }
 
 .small
@@ -36,7 +37,7 @@ pre
 
 a { color: #444; }
 a:visited { color: #444; }
-a:hover { color: #FF4400; }
+a:hover { color: #980000; }
 
 div.field, div.actions
 {
@@ -90,31 +91,22 @@ div.field, div.actions
   display: block;
 }
 
-#header h1, #header h2
+#header h1
 {
   display: inline;
-  font-size: 50px;
+  font-size: 70px;
 }
 
-#header h1 a
+#header h1 a, #header h1:hover span a, .semantic
 {
-  color: #000000;
+  color: #980000;
 }
 
-#header h1 a:hover
-{
-  color: red;
-}
-
-#header h2 a
+#header h1 span a, #header h1:hover a, .podcast
 {
   color: #333333;
 }
 
-#header h2 a:hover
-{
-  color: #ff4400;
-}
 
 #header a
 {
@@ -184,6 +176,7 @@ div.field, div.actions
   float:right;
   color:gray;
   font-size:18px;
+  text-align: right;
 }
 
 .parell {
@@ -199,20 +192,20 @@ div.field, div.actions
   text-align: right;
 }
 
-#triangle
+.presentation
 {
-  background: url('../images/top.png') no-repeat top 3%;
-  height: 25px;
-  margin-top: -20px;
-}
-
-.presentation {
-  background: #c0deed;
+  background: #bbb;
+  color: #000;
   padding: 2px 20px 20px 20px;
   min-height: 100px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+}
+
+.presentation a
+{
+  color: #000;
 }
 
 .prestext
