@@ -18,25 +18,23 @@
 <br /><br />
 
 <div id="comments">
-<span id="comments_count"><%= @episode.comments.count %> Comentaris</span>
-<%= render :partial => @episode.comments %>
+  <span id="comments_count"><%= @episode.comments.count %> Comentaris</span>
+  <%= render :partial => @episode.comments %>
+</div>
+
+<div id="comment-notice"></div>
 
 <h2>Digues-hi la teva!</h2>
 <% form_for Comment.new(:episode => @episode), :remote => true do |f| %>
 	<%= f.hidden_field :episode_id %>
 	<%= f.label :name, "Nom" %><br />
 	<%= f.text_field :name %><br />
-	<%= f.label :email, "Email" %><br />	
+	<%= f.label :email, "Email" %><br />
 	<%= f.text_field :email %><br />
 	<%= f.label :content, "Comentari" %><br />
 	<%= f.text_area :content %><br />
 	<%= f.submit "Afegeix comentari" %>
-	
 <% end %>
-
-</div>
-
-
 
 <span style="float:right;">
 	<%= link_to 'Modifica episodi', edit_episode_path(@episode) %> |

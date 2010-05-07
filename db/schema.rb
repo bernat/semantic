@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(:version => 20100504212929) do
     t.integer  "episode_id",    :null => false
     t.string   "name"
     t.string   "email"
-    t.string   "web"
-    t.string   "subject"
     t.text     "content"
     t.string   "user_ip"
     t.string   "user_agent"

@@ -1,6 +1,14 @@
-$("#comments_count").before('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
-$("#comments_count").html("<%= pluralize(@comment.episode.comments.count, 'Comentari') %>");
-$("#new_comment").before("<%= escape_javascript(render(:partial => @comment)) %>");
-$("#comment<%=@comment.id%>").effect("highlight", {color: "#88ff88"}, 4000); //No va
-$("#new_comment")[0].reset();
+/* Insert a notice between the last comment and the comment form */
+$("#comment-notice").html('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
 
+/* Replace the count of comments */
+$("#comments_count").html("<%= pluralize(@comment.episode.comments.count, 'Comentari') %>");
+
+/* Add the new comment to the bottom of the comments list */
+$("#comments").append("<%= escape_javascript(render(@comment)) %>");
+
+/* Highlight the new comment */
+$("#comment_<%= @comment.id %>").effect("highlight", {}, 3000);
+
+/* Reset the comment form */
+$("#new_comment")[0].reset();
