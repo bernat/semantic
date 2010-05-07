@@ -1,10 +1,32 @@
 <div id="sidebar" class="column grid_2">
-  <%= link_to episodes_path(:format => :rss), :title => "Subscriu-te al nostre programa i rebràs les últimes actualitzacions directament al teu ordinador o mòbil!" do %>
+	<%= link_to episodes_path(:format => :rss), :title => "Subscriu-te al nostre programa i rebràs les últimes actualitzacions directament al teu ordinador o mòbil!" do %>
 		<p style="font-size: 18px;">Subscriu-te!
 		<%= image_tag("rss.png", :style => "float:left;padding-right:5px;") %></p>
 	<% end %>
-	
-	<br /><br />
+	<br />
+	<h1>Tertulians</h1>
+	<ul>
+		<label for="bernatlink">
+			<li class="centrat"><a id="bernatlink" href="http://bernatfarrero.com">
+				<%= raw gravatar("dberni@gmail.com", :size => 55) %><br />
+				<i>Bernat Farrero</i>
+			</a></li>
+		</label>
+		<label for="jordilink">
+			<li class="centrat"><a id="jordilink" href="http://jrom.net">
+			<%= raw gravatar("jordi@jrom.net", :size => 55) %><br />
+			<i>Jordi Romero</i>
+			</a></li>
+		</label>
+		<label for="masumilink">
+			<li class="centrat"><a id="masumilink" href="http://mutsuda.com">
+				<%= raw gravatar("mutsuda@gmail.com", :size => 55) %><br />
+				<i>Masumi Mutsuda</i>
+			</a></li>
+		</label>			
+	</ul>
+	<!-- <p class="centrat"><a href="/altres"><i>(Altres)</i></a></p> -->
+	<br />
 	<h1>Sponsors</h1>
 	<ul>
 		<label for="link1"><li><a id="link1" href="http://www.jrdv.cat">JRDV</a></li></label>
@@ -13,3 +35,4 @@
 </div>
 
 	<div id="tooltip">&nbsp;</div> 
+	

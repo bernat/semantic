@@ -122,7 +122,7 @@ div.field, div.actions
 {
   font-size: 18px;
   font-weight: bold;
-  margin-left: 25px;
+  margin-left: 10px;
 }
 
 #sidebar ul
@@ -139,17 +139,23 @@ div.field, div.actions
 #sidebar li
 {
   line-height: 16px;
-  padding: 10px 10px 10px 20px;
-  width: 100px;
+  padding: 5px;
+  width: 105px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   margin-left: -30px;
-
+	margin-bottom: 5px;
 }
+
 #sidebar li:hover
 {
   background: #eeeeee;
+}
+
+.centrat
+{
+	text-align: center;
 }
 
 #episodes
