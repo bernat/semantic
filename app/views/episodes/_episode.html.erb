@@ -5,7 +5,7 @@
   </p>
   <h3><%= link_to "\##{episode.id} #{episode.title}", episode %></h3>
 	<br />
-  <p><%= episode.description %></p>
+  <p><%= markdown(episode.description) %></p>
   <% if list %>
   <p>
     <%= link_to "Notes de l'episodi", episode if episode.notes %>

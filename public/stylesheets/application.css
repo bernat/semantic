@@ -10,7 +10,6 @@ body, p, ol, ul, td
 {
   font-family: "Myriad Pro","Myriad Web", helvetica, sans-serif;
   font-size:   14px;
-  /*  line-height: 18px;*/
 }
 
 .small
@@ -172,6 +171,17 @@ div.field, div.actions
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+}
+
+.page
+{
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: justify;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;	
+  background: #C9C9C9;
 }
 
 #comments_count
