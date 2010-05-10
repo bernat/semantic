@@ -24,5 +24,16 @@ module ApplicationHelper
          url << "?#{opts.join('&')}" unless opts.empty?
        end
     end
+    
+  def pretty_date(date)
+    return '' if date.nil?
+    return 'Pròximament' if date > Date.today 
+    dataparsed = Time.parse(date.strftime('%d/%m/%Y')).utc #Fix problem UTC vs Local Zone
+    if dataparsed > 2.day.ago
+        "Fa #{time_ago_in_words date}"
+      else
+        "Emès el #{date.strftime('%d/%m/%Y')}"
+      end
+    end
   
 end
