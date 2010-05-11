@@ -23,7 +23,7 @@ __END__
 @@ layout
 %html
   %head
-    %title Sem&agrave;tic
+    %title Sem&agrave;ntic
     %link(href="semantic.css" rel="stylesheet" type="text/css")
   %body
     = yield
