@@ -133,6 +133,14 @@ div.field, div.actions
 {
   text-decoration: none;
   color: #333;
+	padding: 3px;
+}
+
+#sidebar a:hover
+{
+	background: #eeeeee;
+	-moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 #sidebar li

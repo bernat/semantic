@@ -28,12 +28,13 @@ module ApplicationHelper
   def pretty_date(date)
     return '' if date.nil?
     return 'Pròximament' if date > Date.today 
+    date.strftime('%d/%m/%Y')
     dataparsed = Time.parse(date.strftime('%d/%m/%Y')).utc #Fix problem UTC vs Local Zone
     if dataparsed > 2.day.ago
-        "Fa #{time_ago_in_words date}"
-      else
-        "Emès el #{date.strftime('%d/%m/%Y')}"
-      end
+          "Fa #{time_ago_in_words date}"
+        else
+          "Emès el #{date.strftime('%d/%m/%Y')}"
+        end
     end
   
 end
