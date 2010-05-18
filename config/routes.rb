@@ -3,7 +3,7 @@ Semantic::Application.routes.draw do |map|
   resources :comments
   resources :episodes 
 
-
+  match 'about', :to => 'pages#about'
   
   root :to => "episodes#index"
 
