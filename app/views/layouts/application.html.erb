@@ -8,7 +8,7 @@
   <%= javascript_include_tag	"http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js" %>
   <%= javascript_include_tag "jquery-rails.js" %>
   <%= javascript_include_tag "efectes.js" %>
-
+  <%= yield :javascripts %>
   <%= csrf_meta_tag %>
 </head>
 <body>

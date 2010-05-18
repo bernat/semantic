@@ -31,3 +31,14 @@
   <%= link_to 'Modifica episodi', edit_episode_path(@episode) %>
   | <%= link_to 'Elimina', @episode, :confirm => 'Segur?', :method => :delete %>
 <% end %>
+
+
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag "swfobject" %>
+  <%= javascript_include_tag "audio-player" %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    AudioPlayer.setup("/misc/player.swf", {width: 300});
+  });
+  </script>
+<% end %>

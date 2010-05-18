@@ -3,8 +3,17 @@
     <%= pretty_date episode.aired_on %>
   </p>
   <h3><%= link_to "\##{episode.id} #{episode.title}", episode %></h3>
-  <br />
-  <p><%= raw markdown(episode.description) %></p>
+
+  <% if !list && episode.asset? %>
+    <p id="player_<%= episode.id %>">MP3</p>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      AudioPlayer.embed("player_<%= episode.id %>", {soundFile: "<%= episode.asset.url %>"});
+    });
+    </script>
+  <% end %>
+
+  <%= raw markdown(episode.description) %>
   <% if list %>
   <p>
     <%= link_to "Notes de l'episodi", episode if episode.notes %>
