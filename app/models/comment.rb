@@ -3,9 +3,11 @@ class Comment < ActiveRecord::Base
   attr_accessor :antispam
   
   validates_presence_of :name, :on => :create, :message => "És obligatori introduir un nom"
-  validates_presence_of :email, :on => :create, :message => "És obligatori introduir un email"
+  validates_presence_of :email, :on => :create, :message => "És obligatori introduir un email", :email => true
+
+    
   validates_presence_of :content, :on => :create, :message => "No has escrit res!"
-  
+
   def before_create
     @antispam == "26"
   end
