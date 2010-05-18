@@ -1,9 +1,9 @@
 <%= div_for episode, :class => cycle('senar', 'parell') do %>
-  <p class="data">	
-		<%=pretty_date episode.aired_on %>
+  <p class="data">
+    <%= pretty_date episode.aired_on %>
   </p>
   <h3><%= link_to "\##{episode.id} #{episode.title}", episode %></h3>
-	<br />
+  <br />
   <p><%= raw markdown(episode.description) %></p>
   <% if list %>
   <p>
@@ -16,4 +16,5 @@
       <%= raw markdown(episode.notes) %>
     <% end %>
   <% end %>
+  <%=raw "#{link_to("MP3", episode.asset.url)} (#{number_to_human_size episode.asset.size})" if episode.asset? %>
 <% end %>

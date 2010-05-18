@@ -1,5 +1,5 @@
 <div class="page">
-<% form_for(@episode) do |f| %>
+<% form_for(@episode, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
 <div class="row">
@@ -34,6 +34,14 @@
   <div class="field">
     <%= f.label :notes, "Show notes" %><br />
     <%= f.text_area :notes, :cols => 130 %>
+  </div>
+
+  <div class="field">
+    <% if @episode.asset? %>
+      <strong>Pujat</strong>: <%= @episode.asset.original_filename %> (<%= number_to_human_size @episode.asset.size %>)<br>
+    <% end %>
+    <%= f.label :asset, "Fitxer MP3" %>
+    <%= f.file_field :asset %>
   </div>
 
   <div class="actions grid_12">
