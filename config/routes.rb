@@ -4,6 +4,9 @@ Semantic::Application.routes.draw do |map|
   resources :episodes 
 
   match 'about', :to => 'pages#about'
+  match 'bernat', :to => 'pages#bernat'
+  match 'jordi', :to => 'pages#jordi'
+  match 'masumi', :to => 'pages#masumi'  
   
   root :to => "episodes#index"
 

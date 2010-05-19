@@ -359,5 +359,19 @@ div.flash.notice
 	color:#333;
 }
 
+#barracontacte
+{
+	padding-top: 55px;
+}
+
+
+
+#about .xarxa a{
+	background:#DDD url('../images/button.png') repeat-x;padding:2px 12px;color:#444;text-shadow:#FFF -1px 1px 2px;border:1px solid #BBB;text-decoration:none;-moz-border-radius:16px;-khtml-border-radius:16px;-webkit-border-radius: 16px;
+}
+#about .xarxa a:hover
+{
+	background:#CDCDCD;text-shadow:none;
+	}
 
 
