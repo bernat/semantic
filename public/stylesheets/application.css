@@ -115,6 +115,9 @@ div.field, div.actions
 #sidebar
 {
   margin-top: 20px;
+	background-color: #DDD;
+	-moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 #sidebar h1
@@ -151,7 +154,7 @@ div.field, div.actions
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin-left: -30px;
+  margin-left: -15px;
 	margin-bottom: 5px;
 }
 
@@ -216,10 +219,18 @@ div.field, div.actions
   text-align: right;
 }
 
+#triangle 
+{
+  background: url('../images/top.png') no-repeat top 3%;
+ 	height: 20px;
+	margin-left: 80px;
+}
+
 .presentation
 {
-  background: #bbb;
-  color: #000;
+  background: #222;
+/*  color: #000;*/
+	color: #CCC;
   padding: 2px 20px 20px 20px;
   min-height: 100px;
   -moz-border-radius: 5px;
@@ -272,6 +283,81 @@ div.flash.notice
   border-radius: 5px;
 }
 
+
+#form_comentaris
+{
+	background: #222;
+	-moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+	padding: 20px;
+	color: white;	
+	display: none;
+}
+
+#comment_now
+{
+	margin-left: 85px;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 10px;
+	color: white;
+	background: #222;
+	-moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+#tanca
+{
+	color:white;
+}
+
+
+
+#footer 
+{
+	margin:0 auto;
+	background:#000;
+}
+#footer #more 
+{
+	background:#DDD url('../images/footer.png') repeat-x;
+	padding-top:1em;
+}
+#footer #contact
+{
+	margin:0 auto;
+	width:910px;
+	padding:1.5em 0;
+}
+
+#footer #contact p
+{
+	font-size:1.15em;
+	line-height:1.5;
+	color:#555;
+}
+
+#footer #contact a
+{
+	color:#333;
+	border-color:#333;
+	font-weight:bold;
+}
+
+#footer #contact a:hover
+{
+	background:#333;
+	color:#FFF;
+}
+
+#footer #credits 
+{
+	margin:0 auto;
+	width:910px;
+	color:#FFF;
+	padding:2em 0 0.5em 0;
+	color:#333;
+}
 
 
 

@@ -1,5 +1,16 @@
 $(document).ready(function() { 
     $("#sidebar a[title]").tooltip({tip: '#tooltip', effect: 'bouncy'});
+
+		$('#comment_now').click(function() {
+			$('#form_comentaris').fadeIn();
+			$('#comment_now').hide();
+		});
+		
+		$('#tanca').click(function() {
+			$('#form_comentaris').fadeOut();
+			$('#comment_now').fadeIn();
+		});
+		
 });
 
 $.easing.bouncy = function (x, t, b, c, d) { 

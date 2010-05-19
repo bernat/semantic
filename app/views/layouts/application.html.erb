@@ -13,9 +13,11 @@
 </head>
 <body>
   <div class="row">
-    <div id="admin" class="column grid_12">
-      <%= yield :admin %>
-    </div>
+		<% if logged_in? %>
+	    <div id="admin" class="column grid_12">
+	      <%= yield :admin %>
+	    </div>
+		<% end %>
     <div id="header" class="column grid_12">
       <h1>
         <%= link_to "semàntic", root_path %><span><%= link_to "podcast", root_path %></span>
@@ -23,10 +25,11 @@
     </div>
   </div>
 
+
   <%= render "shared/presentationbox" %>
 
   <div id="main" class="row">
-    <div class="column grid_10">
+    <div class="column grid_9">
       <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
@@ -35,6 +38,25 @@
 
   </div>
 
+	<div id="footer"> 
+				<div id="more"> 
+					<div id="contact">					
+						<h1>Volem sentir el teu parer!</h1>
+						<p> 
+							Ens pots trobar a l'adreça <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;" title="Email de contacte de Semantic Podcast">&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;</a>
+						</p> 
+					</div> 
+				</div> 
+				<div id="credits"> 
+					<p> 
+						&copy; Semantic Podcast 2010 - 2012. Tots els drets reservats.
+					</p> 
+				</div> 
+			</div> 
+		</div>
+		
+		
+		
   <%= render "shared/analytics" %>
 </body>
 </html>

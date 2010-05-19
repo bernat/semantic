@@ -1,39 +1,52 @@
-<div id="sidebar" class="column grid_2">
-	<p style="font-size: 18px;"><a id="about" href="/about">Què és Semàntic?</a></p>
+<div id="sidebar" class="column grid_3">
+	<p style="font-size: 20px;margin-left: 10px;"><a id="about" href="/about">Què és Semàntic?</a></p>
 	<hr>
-	<%= link_to episodes_path(:format => :rss), :title => "Subscriu-te al nostre programa i rebràs les últimes actualitzacions directament al teu ordinador o mòbil!" do %>
-		<p style="font-size: 18px;">Subscriu-te!
-		<%= image_tag("rss.png", :style => "float:left;padding-right:5px;") %></p>
-	<% end %>
-	<br />
+
+
+	<span class="centrat">
+		<p>
+		<%= link_to episodes_path(:format => :rss), :title => "Et caldrà un agregador de feeds per subscriure't al nostre Canal RSS." do %>
+			<%= image_tag("rss.png") %>
+		<% end %>
+		<%= link_to 'http://www.apple.com/itunes/podcasts/', :title => "Subscriu-te mitjançant el programa Itunes." do %>		
+			<%= image_tag("itunes.png", :style => "margin: 0 0 -2px 10px;") %>
+		<% end %>
+		<%= link_to 'http://www.feedburner.com', :title => "Subscriu-te mitjançant feedburner." do %>		
+			<%= image_tag("feedburner.png", :style => "margin: 0 0 -2px 10px;") %>
+		<% end %>
+		</p>
+	</span>
+
+	<hr>
+
 		<h1>Tertulians</h1>
 	<ul>
 		<label for="bernatlink">
 			<li class="centrat"><a id="bernatlink" href="http://bernatfarrero.com">
-				<%= raw gravatar("dberni@gmail.com", :size => 55) %><br />
+				<%= raw gravatar("dberni@gmail.com", :size => 65) %><br />
 				<i>Bernat Farrero</i>
 			</a></li>
 		</label>
 		<label for="jordilink">
 			<li class="centrat"><a id="jordilink" href="http://jrom.net">
-			<%= raw gravatar("jordi@jrom.net", :size => 55) %><br />
+			<%= raw gravatar("jordi@jrom.net", :size => 65) %><br />
 			<i>Jordi Romero</i>
 			</a></li>
 		</label>
 		<label for="masumilink">
 			<li class="centrat"><a id="masumilink" href="http://mutsuda.com">
-				<%= raw gravatar("mutsuda@gmail.com", :size => 55) %><br />
+				<%= raw gravatar("mutsuda@gmail.com", :size => 65) %><br />
 				<i>Masumi Mutsuda</i>
 			</a></li>
 		</label>			
 	</ul>
 	<!-- <p class="centrat"><a href="/altres"><i>(Altres)</i></a></p> -->
 	<br />
-	<h1>Sponsors</h1>
+	<!-- <h1>Sponsors</h1>
 	<ul>
 		<label for="link1"><li><a id="link1" href="http://www.jrdv.cat">JRDV</a></li></label>
 		<label for="link2"><li><a id="link2" href="http://www.itnig.net">Grup Itnig</a></li></label>
-	</ul>
+	</ul> -->
 </div>
 
 	<div id="tooltip">&nbsp;</div> 

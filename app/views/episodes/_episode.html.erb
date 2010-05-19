@@ -16,12 +16,12 @@
   <%= raw markdown(episode.description) %>
   <% if list %>
   <p>
-    <%= link_to "Notes de l'episodi", episode if episode.notes %>
-    | <%= link_to "#{pluralize(episode.comments.count, "Comentari")}", episode %>
+    <%= link_to "Notes de l'episodi", "#{episode_path(episode)}#shownotes" if episode.notes %>
+    | <%= link_to "#{pluralize(episode.comments.count, "Comentari")}", "#{episode_path(episode)}#comentaris" %>
   </p>
   <% else %>
     <% unless episode.notes.empty? %>
-      <h4>Notes de l'episodi</h4>
+      <a style="color:#333" name="shownotes"><h4>Notes de l'episodi</h4></a>
       <%= raw markdown(episode.notes) %>
     <% end %>
   <% end %>
