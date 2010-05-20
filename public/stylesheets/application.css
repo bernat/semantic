@@ -149,8 +149,8 @@ div.field, div.actions
 #sidebar li
 {
   line-height: 16px;
-  padding: 5px;
-  width: 105px;
+  padding: 10px;
+  width: 150px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
