@@ -3,16 +3,16 @@
 	<hr>
 
 
-	<span class="centrat">
+	<span id="logos" class="centrat">
 		<p>
 		<%= link_to episodes_path(:format => :rss), :title => "Et caldrà un agregador de feeds per subscriure't al nostre Canal RSS." do %>
 			<%= image_tag("rss.png") %>
 		<% end %>
-		<%= link_to 'http://www.apple.com/itunes/podcasts/', :title => "Subscriu-te mitjançant el programa iTunes." do %>		
-			<%= image_tag("itunes.png", :style => "margin: 0 0 -2px 10px;") %>
+		<%= link_to 'http://www.apple.com/itunes/podcasts/', :title => "Subscriu-te mitjançant el programa iTunes.", :class => "logos" do %>		
+			<%= image_tag("itunes.png") %>
 		<% end %>
-		<%= link_to 'http://www.feedburner.com', :title => "Subscriu-te mitjançant feedburner." do %>		
-			<%= image_tag("feedburner.png", :style => "margin: 0 0 -2px 10px;") %>
+		<%= link_to 'http://www.feedburner.com', :title => "Subscriu-te mitjançant feedburner.", :class => "logos" do %>		
+			<%= image_tag("feedburner.png") %>
 		<% end %>
 		</p>
 	</span>

@@ -146,6 +146,11 @@ div.field, div.actions
   -webkit-border-radius: 5px;
 }
 
+.logos
+{
+	margin: 0 0 -2px 10px;
+}
+
 #sidebar li
 {
   line-height: 16px;
