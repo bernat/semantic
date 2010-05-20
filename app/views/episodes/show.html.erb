@@ -1,4 +1,6 @@
-<%= render :partial => @episode, :locals => { :list => false } %>
+<div id="episodes">
+	<%= render :partial => @episode, :locals => { :list => false } %>
+</div>
 
 <div id="comments">
   <span id="comments_count"><%= pluralize(@episode.comments.count, "Comentari") %></span>
