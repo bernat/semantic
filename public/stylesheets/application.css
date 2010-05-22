@@ -288,6 +288,19 @@ div.flash.notice
   border-radius: 5px;
 }
 
+div.flash.error
+{
+  display: block;
+  padding: 10px;
+  border: 1px solid red;
+  background-color: #ff9999;
+  margin: 20px 10px;
+  color: #000000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
 
 #form_comentaris
 {
@@ -366,6 +379,12 @@ div.flash.notice
 {
 	padding-top: 55px;
 }
+
+.xarxa
+{
+	float:right;
+	margin-top: 20px;	
+} 
 
 #about .xarxa a
 {
