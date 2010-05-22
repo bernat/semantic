@@ -1,15 +1,20 @@
 class CommentsController < ApplicationController
   before_filter :authenticate, :only => [:update, :destroy]
   
-
-
   def create
     @comment = Comment.create!(params[:comment])
     flash[:notice] = "Gràcies per comentar!"
+    
+    
     respond_to do |format|
       format.html { redirect_to episode_path(@comment.episode) }
       format.js 
     end
+    
+    rescue ActiveRecord::RecordInvalid
+      @errors = true
+      flash[:notice] = "Hi ha errors al comentari i no es publicarà."    
+
   end
 
   def update
