@@ -15,6 +15,7 @@ class EpisodesController < ApplicationController
   # GET /episodes/1.xml
   def show
     @episode = Episode.find(params[:id])
+    @antispam_question = rand(5) + 1
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @episode }

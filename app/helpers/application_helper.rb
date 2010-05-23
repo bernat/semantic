@@ -35,4 +35,18 @@ module ApplicationHelper
       end
     end
 
+    def antispam_question(num)
+      case num
+      when 1 #27
+        "Resultat de sumar 24 més 3"
+      when 2 #5
+        "Resultat de restar 10 menys 5"
+      when 3 #14
+        "Resultat de sumar 4 a 10"
+      when 4 #38
+        "Resultat de sumar 8 a 30"
+      when 5 #100
+        "Resultat de sumar 50 + 50"
+      end
+    end
 end

@@ -19,13 +19,14 @@
 	<h2>Digues-hi la teva!</h2>
 	<% form_for Comment.new(:episode => @episode), :remote => true do |f| %>
 		<%= f.hidden_field :episode_id %>
+		<%= f.hidden_field :antispam_question, :value => @antispam_question %>		
 		<%= f.label :name, "Nom" %>
 		<%= f.text_field :name %>
 		<%= f.label :email, "Email" %>
 		<%= f.text_field :email %><br /><br />
 		<%= f.label :content, "Comentari" %><br />
 		<%= f.text_area :content, :style => "width: 660px;" %><br />
-		<%= f.label :antispam, "Escriu el NÚMERO resultat de sumar 24 més 2:" %>
+		<%= f.label :antispam, "#{antispam_question(@antispam_question)}" %>
 		<%= f.text_field :antispam, :style => "width:30px;margin-left:10px;" %><br /><br />
 		<%= f.submit "Afegeix comentari" %>
 	<% end %>
