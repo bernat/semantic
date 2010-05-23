@@ -51,7 +51,7 @@
 				</div> 
 				<div id="credits"> 
 					<p> 
-						&copy; Semantic Podcast 2010 - 2012. Tots els drets reservats.
+						&copy; Semantic Podcast 2010 <%= (" - " + Time.now.year.to_s) if Time.now.year > 2010 %>. Tots els drets reservats.
 					</p> 
 				</div> 
 			</div> 
