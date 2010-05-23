@@ -2,7 +2,8 @@ Semantic::Application.routes.draw do |map|
 
   resources :comments
   resources :episodes 
-
+  resources :tags
+  
   match 'about', :to => 'pages#about'
   match 'bernat', :to => 'pages#bernat'
   match 'jordi', :to => 'pages#jordi'

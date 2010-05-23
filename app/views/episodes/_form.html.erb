@@ -36,6 +36,21 @@
     <%= f.text_area :notes, :style => "width: 660px;" %>
   </div>
 
+	<% tags = "" %>
+
+
+	<% if !@tag_names.blank? %>
+	  <% for tag in @tag_names %>
+	    <% tags += "#{tag.name} " %>
+	  <% end %>
+	<% end %>
+	
+  <div class="field">
+    <%= f.label :tag_names, 'Tags' %><br />
+    <%= f.text_field :tag_names, :value => tags %>
+		<b>Nota</b>: Les etiquetes no admeten espais, en el seu lloc escriu '_'
+	</div>
+	
   <div class="field">
     <% if @episode.asset? %>
       <strong>Pujat</strong>: <%= @episode.asset.original_filename %> (<%= number_to_human_size @episode.asset.size %>)<br>

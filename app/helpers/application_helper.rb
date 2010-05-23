@@ -49,4 +49,8 @@ module ApplicationHelper
         "Resultat de sumar 50 + 50"
       end
     end
+    
+    def print_tag(tag)
+      tag.name.gsub("_", " ")
+    end
 end

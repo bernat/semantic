@@ -181,7 +181,7 @@ div.field, div.actions
 
 .episode
 {
-  padding: 2px 20px 20px 20px;
+  padding: 2px 20px 30px 20px;
   margin-bottom: 10px;
   text-align: justify;
   -moz-border-radius: 5px;
@@ -402,3 +402,31 @@ div.flash.error
 }
 
 
+#tags ul {
+   float: right;
+}
+
+#tags li {
+	list-style-type: none;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+ 	margin-top: -15px;
+}
+
+#tags a {
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	margin-right:3px;
+	background-color:#666;
+	color:white;
+	border: 1px solid #777;
+	padding:1px 3px 1px;
+	outline-color: -moz-use-text-color;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#tags a:hover {
+	background-color: #333;
+}

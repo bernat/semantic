@@ -23,15 +23,6 @@
     <% unless episode.notes.empty? %>
       <a style="color:#333" name="shownotes"><h4>Notes de l'episodi</h4></a>
       <%= raw markdown(episode.notes) %>
-			<div id="tags">
-				<% if !episode.tags.blank? %>
-					<ul>
-				  <% for tag in episode.tags %>
-				    <li><%= link_to	print_tag(tag), tag_path(tag.name) %></li>
-				  <% end %>
-					</ul>
-				<% end %>
-			</div>
     <% end %>
   <% end %>
   <%=raw "#{link_to("MP3", episode.asset.url)} (#{number_to_human_size episode.asset.size})" if episode.asset? %>

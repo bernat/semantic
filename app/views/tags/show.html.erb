@@ -1,0 +1,10 @@
+<h3>Episodis etiquetats amb <i style="background:yellow;"><%= print_tag(@tag) %></i></h3>
+
+<%= render :partial => @episodes, :locals => { :list => true } %>
+
+
+<% content_for :admin do %>
+  <%= link_to 'Afegir episodi', new_episode_path %>
+<% end if logged_in? -%>
+
+
