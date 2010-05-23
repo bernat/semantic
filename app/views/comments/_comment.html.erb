@@ -1,6 +1,6 @@
 <%= div_for comment do %>
 
-<div class="gravatar_comentaris"><%= raw gravatar(comment.email, :size => 60, :default => "http://localhost:3000/images/no_gravatar.jpg")%></div>
+<div class="gravatar_comentaris"><%= raw gravatar(comment.email, :size => 60, :default => "http://#{request.host_with_port}/images/no_gravatar.jpg")%></div>
   <span class="comment-by"><strong><%= comment.name %></strong> <em><%= comment.created_at.strftime('el dia %d/%m/%Y a les %H:%M')%></em> ha escrit:</span>
 
   <%= content_tag(:p, comment.content, :class => "comment-body") %>
