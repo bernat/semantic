@@ -6,6 +6,6 @@ class AntispamValueValidator < ActiveModel::Validator
     condition ||= (object.antispam.to_i == 14 && object.antispam_question.to_i == 3)
     condition ||= (object.antispam.to_i == 38 && object.antispam_question.to_i == 4)    
     condition ||= (object.antispam.to_i == 100 && object.antispam_question.to_i == 5)
-    object.errors[:base] = "This record is invalid" unless condition
+    object.errors[:base] = "Es spammer" unless condition
   end  
 end

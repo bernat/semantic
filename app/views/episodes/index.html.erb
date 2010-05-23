@@ -1,6 +1,5 @@
-<div id="episodes">
-  <%= render :partial => @episodes, :locals => { :list => true } %>
-</div>
+ <%= render :partial => @episodes, :locals => { :list => true } %>
+
 
 <% content_for :admin do %>
   <%= link_to 'Afegir episodi', new_episode_path %>
