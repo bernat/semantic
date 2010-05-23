@@ -4,6 +4,8 @@
   <span class="comment-by"><strong><%= comment.name %></strong> <em><%= comment.created_at.strftime('el dia %d/%m/%Y a les %H:%M')%></em> ha escrit:</span>
 
   <%= content_tag(:p, comment.content, :class => "comment-body") %>
-	<%= link_to 'esborra',comment_path(comment), :method => :delete, :class => "delete", :remote => true  %>
+	<% if logged_in? %>
+		<%= link_to 'esborra',comment_path(comment), :method => :delete, :class => "delete", :remote => true  %>
+	<% end %>
 
 <% end %>

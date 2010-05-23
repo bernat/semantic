@@ -1,4 +1,8 @@
 Semantic::Application.routes.draw do |map|
+  get "session/login"
+
+  get "session/logout"
+
 
   resources :comments
   resources :episodes 
@@ -8,6 +12,9 @@ Semantic::Application.routes.draw do |map|
   match 'bernat', :to => 'pages#bernat'
   match 'jordi', :to => 'pages#jordi'
   match 'masumi', :to => 'pages#masumi'  
+  
+  match 'login', :to => 'session#login'
+  match 'logout', :to => 'session#logout'
   
   root :to => "episodes#index"
 
