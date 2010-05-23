@@ -8,7 +8,7 @@ Semantic::Application.routes.draw do |map|
   resources :episodes 
   resources :tags
   
-  match 'about', :to => 'pages#about'
+  match 'que-es-semantic', :to => 'pages#about', :as => :about
   match 'bernat', :to => 'pages#bernat'
   match 'jordi', :to => 'pages#jordi'
   match 'masumi', :to => 'pages#masumi'  
