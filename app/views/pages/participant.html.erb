@@ -1,0 +1,11 @@
+<div id="about" class="episode parell">
+	<div class="row">
+			<div id="barracontacte" class="column grid_3">
+					<%= raw gravatar(@participant_email, :size => 125) %>
+			</div>
+	  <div id="descripcio" class="column grid_9">
+			<%= render :partial => @participant %>
+		</div>		
+	
+	</div>
+</div>
