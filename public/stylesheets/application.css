@@ -430,3 +430,10 @@ div.flash.error
 #tags a:hover {
 	background-color: #333;
 }
+
+.gravatar_comentaris
+{
+	float:right;
+	opacity: 0.6;
+	padding: 0 0 5px 15px;
+}

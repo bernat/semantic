@@ -1,9 +1,9 @@
 <%= div_for comment do %>
 
-  <span style="float:right;"><%= link_to 'esborra',comment_path(comment), :method => :delete, :class => "delete", :remote => true  %></span>
-
+<div class="gravatar_comentaris"><%= raw gravatar(comment.email, :size => 60, :default => "http://localhost:3000/images/no_gravatar.jpg")%></div>
   <span class="comment-by"><strong><%= comment.name %></strong> <em><%= comment.created_at.strftime('el dia %d/%m/%Y a les %H:%M')%></em> ha escrit:</span>
 
   <%= content_tag(:p, comment.content, :class => "comment-body") %>
+	<%= link_to 'esborra',comment_path(comment), :method => :delete, :class => "delete", :remote => true  %>
 
 <% end %>

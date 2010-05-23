@@ -1,9 +1,9 @@
 module ApplicationHelper
 
   def gravatar(email, options={})
-        src = h(gravatar_url(email, options))
-        [:class, :alt, :size].each { |opt| options[opt] = h(options[opt]) }
-        "<img class=\"#{options[:class]}\" alt=\"#{options[:alt]}\" width=\"#{options[:size]}\" height=\"#{options[:size]}\" src=\"#{src}\" style=\"padding-bottom:3px\" />"      
+      src = h(gravatar_url(email, options))
+      [:class, :alt, :size].each { |opt| options[opt] = h(options[opt]) }
+      "<img class=\"#{options[:class]}\" alt=\"#{options[:alt]}\" width=\"#{options[:size]}\" height=\"#{options[:size]}\" src=\"#{src}\" style=\"padding-bottom:3px\" />"      
   end
 
   def gravatar_api_url(hash)
@@ -51,6 +51,6 @@ module ApplicationHelper
     end
     
     def print_tag(tag)
-      tag.name.gsub("_", " ")
+          tag.name.gsub("_", " ")
     end
 end
