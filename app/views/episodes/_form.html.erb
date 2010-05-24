@@ -3,6 +3,13 @@
     <%= f.error_messages %>
 
     <div class="row">
+      <div class="column grid_3">
+        <div class="field">
+          <%= f.label :number, 'Número' %><br />
+          <%= f.text_field :number, :size => 5 %>
+        </div>
+      </div>
+
       <div class="column grid_5">
         <div class="field">
           <%= f.label :title, "Títol" %><br />

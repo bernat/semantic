@@ -38,7 +38,7 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
       download = episode.asset
       if download
         xml.item do
-          xml.title "Capítol #{episode.id}: #{episode.title}"
+          xml.title "Capítol #{episode.number}: #{episode.title}"
           xml.description episode.description
           xml.pubDate episode.aired_on.to_s(:rfc822)
           xml.enclosure :url => download.url, :length => download.size, :type => 'audio/mpeg'

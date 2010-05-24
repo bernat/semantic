@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100524112156) do
+ActiveRecord::Schema.define(:version => 20100524113232) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id",    :null => false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20100524112156) do
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
     t.integer  "duration"
+    t.integer  "number"
   end
 
   create_table "taggings", :force => true do |t|

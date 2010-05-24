@@ -8,7 +8,7 @@
     <p id="player_<%= episode.id %>">MP3</p>
     <script type="text/javascript">
     $(document).ready(function() {
-      AudioPlayer.embed("player_<%= episode.id %>", {soundFile: "<%= episode.asset.url %>", titles: "Episodi #<%= episode.id %>"});
+      AudioPlayer.embed("player_<%= episode.id %>", {soundFile: "<%= episode.asset.url %>", titles: "Episodi #<%= episode.number %>"});
     });
     </script>
   <% end %>
