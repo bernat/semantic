@@ -6,8 +6,8 @@ class Episode < ActiveRecord::Base
   attr_accessor :tag_names
 
   has_attached_file :asset,
-    :path => ":rails_root/public/system/episides/episode:number.mp3",
-    :url => "/system/episides/episode:number.mp3"
+    :path => ":rails_root/public/system/episides/episode:id.mp3",
+    :url => "/system/episides/episode:id.mp3"
 
   # Validations
   validates_presence_of :permalink
@@ -15,7 +15,7 @@ class Episode < ActiveRecord::Base
   validates_numericality_of :number
 
   def to_param
-    "#{self.number}-#{self.permalink}"
+    "#{self.id}-#{self.permalink}"
   end
   
   def tag_names=(names)
