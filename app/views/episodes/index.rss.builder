@@ -35,8 +35,8 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
     end
     
     @episodes.each do  |episode|
-      download = episode.asset
-      if download
+      if episode.asset?
+        download = episode.asset
         xml.item do
           xml.title "Capítol #{episode.number}: #{episode.title}"
           xml.description episode.description
