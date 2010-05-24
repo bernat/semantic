@@ -43,6 +43,14 @@ div.field, div.actions
   margin-bottom: 10px;
 }
 
+
+hr
+{
+  border: 0;
+  height: 1px;
+  background-color: #aaa;
+}
+
 .fieldWithErrors
 {
   padding: 2px;
