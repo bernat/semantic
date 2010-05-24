@@ -1,66 +1,79 @@
 <div class="page">
-<% form_for(@episode, :html => {:multipart => true}) do |f| %>
-  <%= f.error_messages %>
+  <% form_for(@episode, :html => {:multipart => true}) do |f| %>
+    <%= f.error_messages %>
 
-<div class="row">
-	<div class="column grid_5">
-  	<div class="field">
-    	<%= f.label :title, "Títol" %><br />
-    	<%= f.text_field :title %>
-  	</div>
-  	<div class="field">
-    	<%= f.label :permalink, "Link permanent" %><br />
-    	<%= f.text_field :permalink %>
-  	</div>
-	</div>
+    <div class="row">
+      <div class="column grid_3">
+        <div class="field">
+          <%= f.label :number, 'Número' %><br />
+          <%= f.text_field :number, :size => 5 %>
+        </div>
+      </div>
 
-
-	<div class="column grid_4">
-		<div class="field">
-    	<%= f.label :aired_on, "Emès el" %><br />
-    	<%= f.date_select :aired_on %>
-  	</div>
-  	<div class="field">
-    	<%= f.label :published, "Publicat" %><br />
-    	<%= f.check_box :published %>
-  	</div>
-	</div>
-</div>
-
-  <div class="field">
-    <%= f.label :description, "Descripció" %><br />
-    <%= f.text_area :description, :style => "width: 660px;" %>
-  </div>
-  <div class="field">
-    <%= f.label :notes, "Show notes" %><br />
-    <%= f.text_area :notes, :style => "width: 660px;" %>
-  </div>
-
-	<% tags = "" %>
+      <div class="column grid_5">
+        <div class="field">
+          <%= f.label :title, "Títol" %><br />
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :permalink, "Link permanent" %><br />
+          <%= f.text_field :permalink %>
+        </div>
+      </div>
 
 
-	<% if !@tag_names.blank? %>
-	  <% for tag in @tag_names %>
-	    <% tags += "#{tag.name} " %>
-	  <% end %>
-	<% end %>
-	
-  <div class="field">
-    <%= f.label :tag_names, 'Tags' %><br />
-    <%= f.text_field :tag_names, :value => tags %>
-		<b>Nota</b>: Les etiquetes no admeten espais, en el seu lloc escriu '_'
-	</div>
-	
-  <div class="field">
-    <% if @episode.asset? %>
-      <strong>Pujat</strong>: <%= @episode.asset.original_filename %> (<%= number_to_human_size @episode.asset.size %>)<br>
+      <div class="column grid_4">
+        <div class="field">
+          <%= f.label :aired_on, "Emès el" %><br />
+          <%= f.date_select :aired_on %>
+        </div>
+        <div class="field">
+          <%= f.label :published, "Publicat" %><br />
+          <%= f.check_box :published %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :description, "Descripció" %><br />
+      <%= f.text_area :description, :style => "width: 660px;" %>
+    </div>
+    <div class="field">
+      <%= f.label :notes, "Show notes" %><br />
+      <%= f.text_area :notes, :style => "width: 660px;" %>
+    </div>
+
+    <% tags = "" %>
+
+
+    <% if !@tag_names.blank? %>
+    <% for tag in @tag_names %>
+    <% tags += "#{tag.name} " %>
     <% end %>
-    <%= f.label :asset, "Fitxer MP3" %>
-    <%= f.file_field :asset %>
-  </div>
+    <% end %>
 
-  <div class="actions grid_16">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :tag_names, 'Tags' %><br />
+      <%= f.text_field :tag_names, :value => tags %>
+      <b>Nota</b>: Les etiquetes no admeten espais, en el seu lloc escriu '_'
+    </div>
+
+
+    <div class="field">
+      <%= f.label :duration, 'Duració (segons)' %><br />
+      <%= f.text_field :duration %>
+    </div>
+
+    <div class="field">
+      <% if @episode.asset? %>
+      <strong>Pujat</strong>: <%= @episode.asset.original_filename %> (<%= number_to_human_size @episode.asset.size %>)<br>
+      <% end %>
+      <%= f.label :asset, "Fitxer MP3" %>
+      <%= f.file_field :asset %>
+    </div>
+
+    <div class="actions grid_16">
+      <%= f.submit %>
+    </div>
+  <% end %>
 </div>

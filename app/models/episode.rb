@@ -11,6 +11,8 @@ class Episode < ActiveRecord::Base
 
   # Validations
   validates_presence_of :permalink
+  validates_presence_of :number
+  validates_numericality_of :number
 
   def to_param
     "#{self.id}-#{self.permalink}"
