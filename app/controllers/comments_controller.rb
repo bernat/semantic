@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   before_filter :authenticate, :only => [:update, :destroy]
   
+  def index
+    @comentaris = Comment.find(:all)      
+  end
+  
   def create
     @comment = Comment.create!(params[:comment])
     flash[:notice] = "Gràcies per comentar!"
