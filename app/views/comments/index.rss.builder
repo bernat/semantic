@@ -5,7 +5,7 @@ xml.channel do
   xml.description "Feed dels comentaris del podcast Semàntic"  
   xml.language 'ca'
   xml.link root_url
-  for comment in @comentaris
+  for comment in @comments
         number = number + 1
           xml.item do
             xml.title "Comentari ##{number}"

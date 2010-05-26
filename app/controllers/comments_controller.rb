@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_filter :authenticate, :only => [:update, :destroy]
   
   def index
-    @comentaris = Comment.find(:all)      
+    @comments = Comment.find(:all)      
   end
   
   def create
