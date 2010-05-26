@@ -9,41 +9,29 @@
 <div id="comment-notice"></div>
 
 
-		
-<div id="triangle"></div>
-	<a name="comentaris" id="comment_now" href="#comentaris">Vull comentar!</a>
-<div id="form_comentaris">
-	<span style="float:right;"><a id="tanca" href="#comentaris">tanca</a></span>
 
-	<h2>Digues-hi la teva!</h2>
-	<% form_for Comment.new(:episode => @episode), :remote => true do |f| %>
-		<%= f.hidden_field :episode_id %>
-		<%= f.hidden_field :antispam_question, :value => @antispam_question %>		
-		<%= f.label :name, "Nom" %>
-		<%= f.text_field :name %>
-		<%= f.label :email, "Email" %>
-		<%= f.text_field :email %><br /><br />
-		<%= f.label :content, "Comentari" %><br />
-		<%= f.text_area :content, :style => "width: 660px;" %><br />
-		<%= f.label :antispam, "#{antispam_question(@antispam_question)}" %>
-		<%= f.text_field :antispam, :style => "width:30px;margin-left:10px;" %><br /><br />
-		<%= f.submit "Afegeix comentari" %>
-	<% end %>
+<div id="triangle"></div>
+<a name="comentaris" id="comment_now" href="#comentaris">Vull comentar!</a>
+<div id="form_comentaris">
+  <span style="float:right;"><a id="tanca" href="#comentaris">tanca</a></span>
+
+  <h2>Digues-hi la teva!</h2>
+  <%= render :partial => 'comments/form', :locals => { :episode => @episode } %>
 </div>
 
 
 <%= content_for :admin do %>
-  <%= link_to 'Modifica episodi', edit_episode_path(@episode) %>
-  | <%= link_to 'Elimina', @episode, :confirm => 'Segur?', :method => :delete %>
+<%= link_to 'Modifica episodi', edit_episode_path(@episode) %>
+| <%= link_to 'Elimina', @episode, :confirm => 'Segur?', :method => :delete %>
 <% end %>
 
 
 <%= content_for :javascripts do %>
-  <%= javascript_include_tag "swfobject" %>
-  <%= javascript_include_tag "audio-player" %>
-  <script type="text/javascript">
-  $(document).ready(function() {
-    AudioPlayer.setup("/misc/player.swf", {width: 300});
-  });
-  </script>
+<%= javascript_include_tag "swfobject" %>
+<%= javascript_include_tag "audio-player" %>
+<script type="text/javascript">
+$(document).ready(function() {
+  AudioPlayer.setup("/misc/player.swf", {width: 300});
+});
+</script>
 <% end %>
