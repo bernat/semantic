@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>semàntic podcast: Aquesta pàgina no existeix 404</title>
+  <%= stylesheet_link_tag 'application', 'grid' %>
+  <meta http-equiv="content-type" 
+  		content="text/html;charset=utf-8" />
   <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+    body { 
+      background-color: #fff; color: #666; 
+      text-align: center; 
+      font-family: "Myriad Pro","Myriad Web", helvetica, sans-serif; 
+      font-size:   16px; 
+    }
+    
     div.dialog {
       width: 25em;
       padding: 0 4em;
@@ -12,15 +21,47 @@
       border-right-color: #999;
       border-bottom-color: #999;
     }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    
+    #header
+    {
+      display: block;
+    }
+
+    #header h1
+    {
+      display: inline;
+      font-size: 70px;
+    }
+
+    #header h1 a, #header h1:hover span a, .semantic
+    {
+      color: #980000;
+    }
+
+    #header h1 span a, #header h1:hover a, .podcast
+    {
+      color: #333333;
+    }
+
+
+    #header a
+    {
+      text-decoration: none;
+    }
+    h2 { font-size: 100%; color: #333; line-height: 1.5em; font-size: 20px; }
   </style>
 </head>
 
 <body>
+  <div id="header" class="column grid_16">
+     <h1>
+        <a href="http://semantic.cat">semantic</a><span><a href="http://semantic.cat">podcast</a></span>
+      </h1>
+  </div>
   <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+    <h2>La pàgina que cerques no existeix!</h2>
+    <p>Pots haver-te equivocat a l'escriure l'adreça o bé aquesta pàgina ja no existeix.</p>
   </div>
 </body>
 </html>
