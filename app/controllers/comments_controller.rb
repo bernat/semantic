@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     
     rescue ActiveRecord::RecordInvalid
       @errors = true
-      flash[:notice] = "Hi ha errors al comentari i no es publicarà."    
+      flash[:notice] = "Hi ha errors al comentari i no es publicarà. Verifica que has omplert TOTS els camps correctament."    
 
   end
 
