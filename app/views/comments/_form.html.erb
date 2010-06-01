@@ -5,9 +5,41 @@
   <%= f.text_field :name %>
   <%= f.label :email, "Email" %>
   <%= f.text_field :email %><br /><br />
-  <%= f.label :content, "Comentari" %><br />
-  <%= f.text_area :content, :style => "width: 660px;" %><br />
+  <%= f.label :content, "Comentari" %>
+  <a href="#comment-markdown-help" rel="facebox" class="comments-format-howto">Com donar format al comentari</a>
+  <br />
+  <%= f.text_area :content %><br />
   <%= f.label :antispam, "#{antispam_question(@antispam_question)}" %>
   <%= f.text_field :antispam, :style => "width:30px;margin-left:10px;" %><br /><br />
   <%= f.submit "Afegeix comentari" %>
 <% end %>
+
+<div id="comment-markdown-help" style="display: none;">
+  <div class="infobox">
+      <h2>Com donar format al comentari</h2>
+      <p>La manera més fàcil d'aprendre és per exemple, així que mostrem més o menys tot el que es pot fer i com quedarà:</p>
+      <%
+        example = <<-FIN
+Una línia...
+Una altra línia junta.
+
+Una línia separada.
+
+**Negreta**, *cursiva*, [link a semàntic](http://semantic.cat/), ...
+
+- Una llista
+- Desordenada
+
+Una mica de codi:
+
+    def una_mica_de_codi
+      "Hi ha d'haver quatre espais a l'esquerra com a mínim"
+    end
+FIN
+    %>
+      <h3>Codi</h3>
+      <pre><%= example %></pre>
+      <h3>Resultat</h3>
+      <%= gfm(example) %>
+  </div>
+</div>
