@@ -1,4 +1,3 @@
-number = 0
 xml.rss :version => "2.0" do
 xml.channel do
   xml.title "Feed de Comentaris"
@@ -6,14 +5,11 @@ xml.channel do
   xml.language 'ca'
   xml.link root_url
   for comment in @comments
-        number = number + 1
           xml.item do
-            xml.title "Comentari ##{number}"
-            xml.category "Episodi #{comment.episode.title}"              
-            xml.pubDate comment.created_at.to_s(:rfc822)                      
-            xml.author "#{comment.name}@semantic.cat"
-            xml.description comment.content
-            xml.link episode_url(comment.episode)           
+            xml.title "Comentari ##{comment.id} a l'episodi #{comment.episode.title} escrit per #{comment.name}"
+            xml.pubDate comment.created_at.to_s(:rfc822)
+            xml.description markdown comment.content
+            xml.link "#{episode_url(comment.episode)}#comment_#{comment.id}"
           end
      end
    end
