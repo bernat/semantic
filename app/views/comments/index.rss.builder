@@ -8,7 +8,7 @@ xml.channel do
           xml.item do
             xml.title "Comentari ##{comment.id} a l'episodi #{comment.episode.title} escrit per #{comment.name}"
             xml.pubDate comment.created_at.to_s(:rfc822)
-            xml.description markdown comment.content
+            xml.description gfm(comment.content)
             xml.link "#{episode_url(comment.episode)}#comment_#{comment.id}"
           end
      end
