@@ -2,22 +2,28 @@
 <html>
 <head>
   <title>semàntic podcast</title>
-  <%= stylesheet_link_tag 'application', 'grid' %>
+  <%= stylesheet_link_tag 'application', 'grid', 'facebox' %>
   <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
   <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>
   <%= javascript_include_tag	"http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js" %>
-  <%= javascript_include_tag "jquery-rails.js" %>
-  <%= javascript_include_tag "efectes.js" %>
+  <%= javascript_include_tag "jquery-rails" %>
+  <%= javascript_include_tag "efectes" %>
+  <%= javascript_include_tag "facebox" %>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox() 
+    })
+  </script>
   <%= yield :javascripts %>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div class="row">
-		<% if logged_in? %>
-	    <div id="admin" class="column grid_16">
-	      <%= yield :admin %>
-	    </div>
-		<% end %>
+    <% if logged_in? %>
+    <div id="admin" class="column grid_16">
+      <%= yield :admin %>
+    </div>
+    <% end %>
     <div id="header" class="column grid_16">
       <h1>
         <%= link_to "semàntic", root_path %><span><%= link_to "podcast", root_path %></span>
@@ -25,40 +31,39 @@
     </div>
   </div>
 
-
   <%= render "shared/presentationbox" %>
 
   <div id="main" class="row">
     <div class="column grid_13">
       <p class="notice"><%= notice %></p>
-				<div id="episodes">
-      		<%= yield %>
-				</div>
+      <div id="episodes">
+        <%= yield %>
+      </div>
     </div>
 
     <%= render "shared/sidebar" %>
 
   </div>
 
-	<div id="footer"> 
-				<div id="more"> 
-					<div id="contact">					
-						<h1>Volem sentir el teu parer!</h1>
-						<p> 
-							Ens pots trobar a l'adreça <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;" title="Email de contacte de Semantic Podcast">&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;</a>
-						</p> 
-					</div> 
-				</div> 
-				<div id="credits"> 
-					<p> 
-						&copy; Semantic Podcast 2010 <%= (" - " + Time.now.year.to_s) if Time.now.year > 2010 %>. Tots els drets reservats.
-					</p> 
-				</div> 
-			</div> 
-		</div>
-		
-		
-		
-  <%= render "shared/analytics" %>
+  <div id="footer">
+    <div id="more">
+      <div id="contact">
+        <h1>Volem sentir el teu parer!</h1>
+        <p>
+          Ens pots trobar a l'adreça <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;" title="Email de contacte de Semantic Podcast">&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;</a>
+        </p>
+      </div>
+    </div>
+    <div id="credits">
+      <p>
+        &copy; Semantic Podcast 2010 <%= (" - " + Time.now.year.to_s) if Time.now.year > 2010 %>. Tots els drets reservats.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<%= render "shared/analytics" %>
 </body>
 </html>
