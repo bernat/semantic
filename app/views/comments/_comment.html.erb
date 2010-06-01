@@ -3,7 +3,7 @@
 <div class="gravatar_comentaris"><%= raw gravatar(comment.email, :size => 60, :default => "http://#{request.host_with_port}/images/no_gravatar.jpg")%></div>
   <span class="comment-by"><strong><%= comment.name %></strong> <em><%= comment.created_at.strftime('el dia %d/%m/%Y a les %H:%M')%></em> ha escrit:</span>
 
-  <%= content_tag(:p, markdown(sanitize(comment.content)).html_safe, :class => "comment-body") %>
+  <%= content_tag(:p, markdown(gfm(sanitize(comment.content))).html_safe, :class => "comment-body") %>
 	<% if logged_in? %>
 		<%= link_to 'esborra',comment_path(comment), :method => :delete, :class => "delete", :remote => true  %>
 	<% end %>
