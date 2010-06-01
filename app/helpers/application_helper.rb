@@ -54,6 +54,7 @@ module ApplicationHelper
           tag.name.gsub("_", " ")
     end
 
+    # Github Flavoured Markdown from http://github.github.com/github-flavored-markdown/
     def gfm(text)
       # Extract pre blocks
       extractions = {}
@@ -78,6 +79,6 @@ module ApplicationHelper
         "\n\n" + extractions[$1]
       end
 
-      text
+      markdown(sanitize(text)).html_safe
     end
 end
