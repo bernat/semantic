@@ -1,0 +1,19 @@
+<script type='text/javascript' src='/player/swfobject.js'></script>
+<div id='espodcast' style='display: none'>Semàntic Podcast - Espot</div>
+
+<script type='text/javascript'>
+var so = new SWFObject('/player/player.swf','mpl','960','540','9');
+  so.addParam('allowfullscreen','true');
+  so.addParam('allowscriptaccess','always');
+  so.addParam('wmode','opaque');
+  so.addVariable('image','/player/espodcast-1.jpg');
+  so.addVariable('file','/player/espodcast-1.m4v');
+  so.write('espodcast');
+</script>
+
+<div id="espodcast-text">
+  <a href="#espodcast" rel="facebox">
+    <img src="/player/espodcast-1-mini.jpg" alt="Primer espot de Semàntic">
+    <span>Fes clic aquí per veure el nostre nou espot!</span>
+  </a>
+</div>
