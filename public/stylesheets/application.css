@@ -8,7 +8,7 @@ body
 
 body, p, ol, ul, td
 {
-  font-family: "Myriad Pro","Myriad Web", helvetica, sans-serif;
+  font-family: "Myriad Pro","Myriad Web", "Trebuchet MS", helvetica, sans-serif;
   font-size:   14px;
 }
 
@@ -403,8 +403,7 @@ div.flash.error
 {
   background:#DDD url('../images/button.png') repeat-x;
   padding:2px 12px;color:#444;text-shadow:#FFF -1px 1px 2px;border:1px solid #BBB;
-  text-decoration:none;
-  -moz-border-radius:16px;
+  text-decoration:none;-moz-border-radius:16px;
   -khtml-border-radius:16px;
   -webkit-border-radius: 16px;
 }
@@ -472,33 +471,4 @@ a.comments-format-howto
 textarea
 {
   width: 100%;
-}
-
-#espodcast-text a
-{
-  display: block;
-  margin: 20px auto;
-  width: 640px;
-  height: 100px;
-  padding: 20px;
-  background-color: #314654;
-  -moz-border-radius:16px;
-  -khtml-border-radius:16px;
-  -webkit-border-radius: 16px;
-  text-decoration: none;
-}
-
-#espodcast-text a span
-{
-  color: #ddd;
-  font-size: 1.7em;
-  text-decoration: none;
-  display: block;
-  margin-top: 1.5em;
-}
-
-#espodcast-text img
-{
-  float: left;
-  margin-right: 20px;
 }
