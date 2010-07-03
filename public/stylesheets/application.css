@@ -502,3 +502,36 @@ textarea
   float: left;
   margin-right: 20px;
 }
+
+.promo a
+{
+  display: block;
+  margin: 20px auto;
+  width: 640px;
+  height: 80px;
+  padding: 20px;
+  -moz-border-radius:16px;
+  -khtml-border-radius:16px;
+  -webkit-border-radius: 16px;
+  text-decoration: none;
+
+}
+
+.promo a span
+{
+  color: #ddd;
+  font-size: 1.7em;
+  text-decoration: none;
+  display: block;
+  margin-top: 1.2em;
+}
+.promo img
+{
+  float: left;
+  margin-right: 20px;
+}
+
+#premisblocs a
+{
+  background-color: #34151A;
+}
