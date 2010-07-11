@@ -545,9 +545,9 @@ textarea
 
 #feeds
 {
-	-moz-border-radius:16px;
-  -khtml-border-radius:16px;
-  -webkit-border-radius: 16px;
+	-moz-border-radius:8px;
+  -khtml-border-radius:8px;
+  -webkit-border-radius: 8px;
 	padding: 10px;
 	background-color: #EEEEEE;
 }
