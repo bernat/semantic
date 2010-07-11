@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>semàntic podcast</title>
   <%= stylesheet_link_tag 'application', 'grid', 'facebox' %>
-  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
-  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>
+
+  <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAOSd9q8g3QaAV3PdMj3ACmxSVPp4G-3frd04r8X0-CG9XMW4GCBSCotAS8JCleNkYzzzxgJh4pnYZKg"></script>
+  <script type="text/javascript">
+      google.load("jquery", "1.4.2");
+      google.load("feeds", "1");
+  </script>
+  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>   
   <%= javascript_include_tag	"http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js" %>
   <%= javascript_include_tag "jquery-rails" %>
   <%= javascript_include_tag "efectes" %>
@@ -48,11 +54,22 @@
 
   <div id="footer">
     <div id="more">
-      <div id="contact">
-        <h1>Volem sentir el teu parer!</h1>
-        <p>
-          Ens pots trobar a l'adreça <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;" title="Email de contacte de Semantic Podcast">&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;</a>
-        </p>
+      <div class="row" id="contact">
+        <div class="column grid_7">
+          <h1>Volem sentir el teu parer!</h1>
+          <p>
+            Ens pots trobar a l'adreça <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;" title="Email de contacte de Semantic Podcast">&#112;&#111;&#100;&#99;&#97;&#115;&#116;&#64;&#115;&#101;&#109;&#97;&#110;&#116;&#105;&#99;&#46;&#99;&#97;&#116;</a>
+          </p>
+        </div>
+        <div class="column grid_3">
+           <img src="/images/ocelltwitter.png" alt="twitter bird"/>
+          
+        </div>
+        <div id="twitterfeed" class="column grid_5">
+          
+          <div id="feeds"></div>
+       
+        </div>
       </div>
     </div>
     <div id="credits">
@@ -61,10 +78,7 @@
       </p>
     </div>
   </div>
-</div>
 
-
-
-<%= render "shared/analytics" %>
+  <%= render "shared/analytics" %>
 </body>
 </html>

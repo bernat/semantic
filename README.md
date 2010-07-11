@@ -13,3 +13,6 @@ TODO
 - Tema login
   - /login no funciona
 - Posar banner subscripció itunes a cada podcast
+- Integració amb twitter (en curs)
+- Paginació
+- Nova secció: Escola Semàntic

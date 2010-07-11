@@ -1,5 +1,5 @@
 <div id="sidebar" class="column grid_3">
-	<span id="logos" class="centrat">
+	<div id="logos" class="centrat">
 		<p>
 		<%= link_to "http://feeds.feedburner.com/semanticpodcast", :title => "Et caldrà un agregador de feeds per subscriure't al nostre Canal RSS." do %>
 			<%= image_tag("rss.png") %>
@@ -11,40 +11,34 @@
 			<%= image_tag("twitter.png") %>
 		<% end %>
 		</p>
-	</span>
+	</div>
 
 	<hr>
-	<p style="font-size: 16px;margin-left: 10px;"><%= link_to "Què és Semàntic", about_path %></p>
-
-
-
-
-
+	<p class="aboutbutton"><%= link_to "Què és Semàntic", about_path %></p>
 	<hr>
 
-		<h1>Participants</h1>
+	<h1>Participants</h1>
 	<ul>
-		<label for="bernatlink">
-			<a id="bernatlink" href="/bernat">
 			<li class="centrat">
-				<%= raw gravatar("dberni@gmail.com", :size => 65) %><br />
-				Bernat Farrero
-			</li></a>
-		</label>
-		<label for="jordilink">
-			<a id="jordilink" href="/jordi">
+			  <a id="bernatlink" href="/bernat">
+				  <%= raw gravatar("bernat@itnig.net", :size => 65) %>
+				  <br />Bernat Farrero
+				</a>
+			</li>
+		
 			<li class="centrat">
-				<%= raw gravatar("jordi@jrom.net", :size => 65) %><br />
-				Jordi Romero
-			</li></a>
-		</label>
-		<label for="masumilink">
-			<a id="masumilink" href="/masumi">
+			  <a id="jordilink" href="/jordi">
+				  <%= raw gravatar("jordi@jrom.net", :size => 65) %>
+				  <br />Jordi Romero
+				</a>
+			</li>
+			
 			<li class="centrat">
-				<%= raw gravatar("mutsuda@gmail.com", :size => 65) %><br />
-				Masumi Mutsuda
-			</li></a>
-		</label>			
+			  <a id="masumilink" href="/masumi">
+				  <%= raw gravatar("mutsuda@gmail.com", :size => 65) %>
+				  <br />Masumi Mutsuda
+				</a>
+			</li>
 	</ul>
 	<!-- <p class="centrat"><a href="/altres"><i>(Altres)</i></a></p> -->
 	<br />

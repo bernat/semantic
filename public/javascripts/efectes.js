@@ -11,6 +11,18 @@ $(document).ready(function() {
 			$('#comment_now').fadeIn();
 		});
 		
+		/* Banner novetats */
+		numFeeds = 7;
+		rand = Math.ceil(Math.random() * numFeeds);
+
+		initialize();
+		setInterval(function () {
+					$("#feeds").fadeOut("slow").delay(100);
+					setTimeout(function() { initialize(); }, 500);
+					$("#feeds").delay(100).fadeIn("slow");
+								
+	   }, 6000); 
+	
 });
 
 $.easing.bouncy = function (x, t, b, c, d) { 
@@ -36,27 +48,44 @@ $.tools.tooltip.addEffect("bouncy",
 );
 
 
-// /* Overlays */
-// 
-// // execute your scripts when the DOM is ready. this is a good habit 
-// $(function() { 
-//  
-//     // assign a click event to the exposed element, using normal jQuery coding 
-//     $("#presentationbox").mouseover(function() { 
-// 
-//         // perform exposing for the clicked element 
-//         api1 = $(this).expose({api: true}).load(); 				
-// 				api1.close().delay(500);
-//     }); 
-// });
-// 
-// $(function() { 
-//  
-//     // assign a click event to the exposed element, using normal jQuery coding 
-//     $("#episodes").mouseover(function() { 
-//  
-// 			  // perform exposing for the clicked element 
-//         api2 = $(this).expose({api: true}).load(); 
-// 				api2.close().delay(500);
-//     }); 
-// });
+/* Barra novetats */
+
+var rand;
+var numFeeds;
+
+function initialize() 
+{
+   var feedControl = new google.feeds.FeedControl();
+   feedControl.setNumEntries(1);
+
+   switch(rand)
+   {
+      case 1:
+        feedControl.addFeed("http://twitter.com/statuses/user_timeline/147278409.rss", "Twitter Semàntic");
+        break;
+      case 2:
+        feedControl.addFeed("http://feeds.feedburner.com/bernatfarrero", "Bernat Farrero blog");
+        break;
+			case 3:
+				feedControl.addFeed("http://feeds.feedburner.com/JROM", "Jordi Romero blog");
+				break;
+			case 4: 
+				feedControl.addFeed("http://feeds.feedburner.com/Nigeka", "Masumi Mutsuda blog");
+				break;
+			case 5:
+				feedControl.addFeed("http://twitter.com/statuses/user_timeline/16133642.rss", "Twitter Mutsuda");
+				break;
+			case 6:
+				feedControl.addFeed("http://twitter.com/statuses/user_timeline/14269090.rss", "Twitter Jordi");
+				break;
+      default:
+        feedControl.addFeed("http://twitter.com/statuses/user_timeline/88408309.rss", "Twitter Bernat");
+    }
+
+    feedControl.draw(document.getElementById("feeds"));
+		rand = (rand + 1) % numFeeds;
+  }
+
+
+
+
