@@ -37,21 +37,25 @@ module ApplicationHelper
 
     def antispam_question(num)
       case num
-      when 1 #27
-        "Resultat de sumar 24 més 3"
-      when 2 #5
-        "Resultat de restar 10 menys 5"
-      when 3 #14
-        "Resultat de sumar 4 a 10"
-      when 4 #38
-        "Resultat de sumar 8 a 30"
-      when 5 #100
-        "Resultat de sumar 50 + 50"
+      when 1 #270
+        "Resultat de sumar 240 més 30"
+      when 2 #50
+        "Resultat de restar 100 menys 50"
+      when 3 #140
+        "Resultat de sumar 40 a 100"
+      when 4 #380
+        "Resultat de sumar 80 a 300"
+      when 5 #1000
+        "Resultat de sumar 500 + 500"
       end
     end
     
     def print_tag(tag)
           tag.name.gsub("_", " ")
+    end
+
+    def markdown(text)
+      Markdown.new(text).to_html.html_safe
     end
 
     # Github Flavoured Markdown from http://github.github.com/github-flavored-markdown/
