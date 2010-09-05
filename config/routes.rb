@@ -1,4 +1,6 @@
 Semantic::Application.routes.draw do |map|
+  resources :screencasts
+
   get "session/login"
 
   get "session/logout"

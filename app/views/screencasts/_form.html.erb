@@ -1,0 +1,40 @@
+<%= form_for(@screencast) do |f| %>
+  <% if @screencast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@screencast.errors.count, "error") %> prohibited this screencast from being saved:</h2>
+
+      <ul>
+      <% @screencast.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :published_at %><br />
+    <%= f.datetime_select :published_at %>
+  </div>
+  <div class="field">
+    <% if @screencast.asset? %>
+    <strong>Pujat</strong>: <%= @screencast.asset.original_filename %> (<%= number_to_human_size @screencast.asset.size %>)<br>
+    <% end %>
+    <%= f.label :asset, "Fitxer MOV" %>
+    <%= f.file_field :asset %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
