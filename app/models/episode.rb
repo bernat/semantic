@@ -5,6 +5,9 @@ class Episode < ActiveRecord::Base
   has_many :tags, :through => :taggings  
   attr_accessor :tag_names
 
+  cattr_reader :per_page
+  @@per_page = 10
+
   has_attached_file :asset,
     :path => ":rails_root/public/system/episides/episode:id.mp3",
     :url => "/system/episides/episode:id.mp3"

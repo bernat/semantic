@@ -3,7 +3,7 @@ class EpisodesController < ApplicationController
   # GET /episodes
   # GET /episodes.xml
   def index
-    @episodes = Episode.find(:all, :order => "aired_on DESC")
+    @episodes = Episode.paginate :page => params[:page], :order => 'aired_on DESC'
 
     respond_to do |format|
       format.html # index.html.erb

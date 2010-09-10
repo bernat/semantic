@@ -552,4 +552,37 @@ textarea
 	background-color: #EEEEEE;
 }
 
-
+/* Pagination with will_paginate */
+.pagination
+{
+  background: #F1F1F1;
+  border: 1px solid #E5E5E5;
+  text-align: center;
+  padding: 0.5em;
+}
+.pagination a, .pagination span
+{
+	padding: .2em .3em;
+}
+.pagination span.disabled
+{
+	color: #AAA;
+}
+.pagination em
+{
+	font-weight: bold;
+	background: #C9C9C9;
+	padding: 3px;
+	-moz-border-radius:8px;
+  -khtml-border-radius:8px;
+  -webkit-border-radius: 8px;
+}
+.pagination a
+{
+		text-decoration: none;
+    color: black;
+}
+.pagination a:hover, .pagination a:focus
+{
+      text-decoration: underline;
+}
