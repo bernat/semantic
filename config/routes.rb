@@ -13,7 +13,8 @@ Semantic::Application.routes.draw do |map|
   match 'que-es-semantic', :to => 'pages#about', :as => :about
   match 'bernat', :to => 'pages#bernat'
   match 'jordi', :to => 'pages#jordi'
-  match 'masumi', :to => 'pages#masumi'  
+  match 'masumi', :to => 'pages#masumi'
+  match 'membres', :to => 'pages#membres', :as => :membres
   
   match 'login', :to => 'session#login'
   match 'logout', :to => 'session#logout'

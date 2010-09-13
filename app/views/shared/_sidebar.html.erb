@@ -16,37 +16,27 @@
 	<hr>
 	<p class="aboutbutton"><%= link_to "Què és Semàntic", about_path %></p>
 	<hr>
-
-	<h1>Participants</h1>
+	<p class="aboutbutton"><%= link_to "Membres Semàntic", membres_path %></p>
+  <hr>
+	<h1>Últims Episodis</h1>
 	<ul>
-			<li class="centrat">
-			  <a id="bernatlink" href="/bernat">
-				  <%= raw gravatar("bernat@itnig.net", :size => 65) %>
-				  <br />Bernat Farrero
-				</a>
-			</li>
-		
-			<li class="centrat">
-			  <a id="jordilink" href="/jordi">
-				  <%= raw gravatar("jordi@jrom.net", :size => 65) %>
-				  <br />Jordi Romero
-				</a>
-			</li>
-			
-			<li class="centrat">
-			  <a id="masumilink" href="/masumi">
-				  <%= raw gravatar("mutsuda@gmail.com", :size => 65) %>
-				  <br />Masumi Mutsuda
-				</a>
-			</li>
-	</ul>
-	<!-- <p class="centrat"><a href="/altres"><i>(Altres)</i></a></p> -->
+	<% Episode.find(:all, :order => 'number desc', :limit => 5).each do |episode| %>
+	 <li><%= link_to "#" + episode.number.to_s + ": " + episode.title, episode %></li>
+	<% end  %>
+  </ul>
 	<br />
 	<!-- <h1>Sponsors</h1>
 	<ul>
 		<label for="link1"><li><a id="link1" href="http://www.jrdv.cat">JRDV</a></li></label>
 		<label for="link2"><li><a id="link2" href="http://www.itnig.net">Grup Itnig</a></li></label>
 	</ul> -->
+	<hr>
+	<h1>Screencasts</h1>
+	<ul>
+	<% Screencast.find(:all, :order => 'published_at desc', :limit => 5).each do |screencast| %>
+	 <li><%= link_to screencast.title, screencast %></li>
+	<% end  %>
+  </ul>
 </div>
 
 	<div id="tooltip">&nbsp;</div> 

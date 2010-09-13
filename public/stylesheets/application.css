@@ -97,6 +97,13 @@ hr
   list-style: square;
 }
 
+#preheader
+{
+	width: 100%;
+	background-color: #000;
+	height: 32px;
+}
+
 
 #header
 {
@@ -143,14 +150,14 @@ hr
 #sidebar ul
 {
   list-style-type: none;
-  padding: 0;
+	padding: 0 3px 0 3px;
 }
 
 #sidebar a
 {
   text-decoration: none;
   color: #333;
-  padding: 3px;
+  padding: 0 3px 0 3px;
 }
 
 #sidebar a:hover
@@ -201,7 +208,6 @@ hr
 {
   padding: 2px 20px 30px 20px;
   margin-bottom: 10px;
-  text-align: justify;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -211,11 +217,15 @@ hr
 {
   padding: 20px;
   margin-bottom: 10px;
-  text-align: justify;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;	
   background: #C9C9C9;
+}
+
+.episode p, .page p
+{
+	text-align: justify;
 }
 
 #comments_count
@@ -239,7 +249,7 @@ hr
 
 #admin
 {
-  text-align: right;
+  float: right;
 }
 
 #triangle 
@@ -585,4 +595,34 @@ textarea
 .pagination a:hover, .pagination a:focus
 {
       text-decoration: underline;
+}
+
+
+
+#uppermenu
+{
+	float:right;
+}
+#uppermenu ul
+{
+padding-left: 0;
+margin-left: 0;
+color: white;
+float: left;
+width: 100%;
+}
+
+#uppermenu ul li { display: inline; }
+
+#uppermenu ul li a
+{
+padding: 0.1em 0.5em;
+color: white;
+text-decoration: none;
+float: left;
+}
+
+#uppermenu ul li a:hover
+{
+	color:#982222;
 }

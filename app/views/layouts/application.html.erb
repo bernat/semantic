@@ -24,12 +24,19 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div class="row">
-    <% if logged_in? %>
-    <div id="admin" class="column grid_16">
-      <%= yield :admin %>
+  <div id="preheader">
+    <div class="row">
+      <div id="uppermenu">
+        <ul>
+          <li><a href="/" title="Índex del podcast">Podcast</a></li>
+          <li><a href="/screencasts" title="Universitat Semàntic">Universitat Semàntic</a></li>
+          <li<a href="/que-es-semantic" title="Sobre nosaltres">Què és Semàntic</a></li>
+        </ul>
+      </div>
     </div>
-    <% end %>
+  </div>
+
+  <div class="row">
     <div id="header" class="column grid_16">
       <h1>
         <%= link_to "semàntic", root_path %><span><%= link_to "podcast", root_path %></span>
@@ -42,8 +49,12 @@
   <div id="main" class="row">
     <div class="column grid_13">
       <p class="notice"><%= notice %></p>
+      <% if logged_in? %>
+      <div id="admin">
+        <%= yield :admin %>
+      </div>
+      <% end %>
       <div id="episodes">
-        <%= render "shared/premis" %>
         <%= yield %>
       </div>
     </div>
