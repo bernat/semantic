@@ -138,6 +138,7 @@ hr
   background-color: #DDD;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+	padding-bottom: 10px;
 }
 
 #sidebar h1
@@ -151,6 +152,32 @@ hr
 {
   list-style-type: none;
 	padding: 0 3px 0 3px;
+	margin: 0;
+}
+
+#sidebar li
+{
+	background-position:0 0.3em;
+	background-repeat: no-repeat;
+	padding:10px 0 5px 30px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#sidebar li.podcast
+{
+		background-image: url("../images/headset.png");
+}
+
+#sidebar li.screencast
+{
+		background-image: url("../images/screencast.png");
+}
+
+#sidebar li:hover
+{
+  background-color: #eeeeee;
 }
 
 #sidebar a
@@ -172,22 +199,6 @@ hr
   margin: 0 0 -2px 10px;
 }
 
-#sidebar li
-{
-  line-height: 16px;
-  padding: 10px 0;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  margin: 0 auto;
-}
-
-#sidebar li:hover
-{
-  background: #eeeeee;
-}
-
 .aboutbutton
 {
 	font-size: 16px;
@@ -199,12 +210,17 @@ hr
   text-align: center;
 }
 
+.objecte_centrat
+{
+	margin-left: 20%;
+}
+
 #episodes
 {
   margin: 20px 0;
 }
 
-.episode
+.episode, .screencast
 {
   padding: 2px 20px 30px 20px;
   margin-bottom: 10px;
@@ -223,7 +239,7 @@ hr
   background: #C9C9C9;
 }
 
-.episode p, .page p
+.episode p, .page p, .screencast p
 {
 	text-align: justify;
 }

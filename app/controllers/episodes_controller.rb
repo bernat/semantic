@@ -38,7 +38,7 @@ class EpisodesController < ApplicationController
   # GET /episodes/1/edit
   def edit
     @episode = Episode.find(params[:id])
-    @tag_names = @episode.tags    
+    @tag_names = @episode.tags  
   end
 
   # POST /episodes

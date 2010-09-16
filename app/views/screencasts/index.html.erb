@@ -1,37 +1,8 @@
-<h1>Tutorials Semàntic</h1>
+<h1>Screencasts</h1>
+ <%= render :partial => @screencasts, :locals => { :list => true } %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Permalink</th>
-    <th>Description</th>
-    <th>Published at</th>
-    <th>Asset file name</th>
-    <th>Asset content type</th>
-    <th>Asset file size</th>
-    <th>Asset updated at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% content_for :admin do %>
+  <%= link_to 'Afegir episodi', new_screencast_path %>
+<% end if logged_in? -%>
 
-<% @screencasts.each do |screencast| %>
-  <tr>
-    <td><%= screencast.title %></td>
-    <td><%= screencast.permalink %></td>
-    <td><%= screencast.description %></td>
-    <td><%= screencast.published_at %></td>
-    <td><%= screencast.asset_file_name %></td>
-    <td><%= screencast.asset_content_type %></td>
-    <td><%= screencast.asset_file_size %></td>
-    <td><%= screencast.asset_updated_at %></td>
-    <td><%= link_to 'Show', screencast %></td>
-    <td><%= link_to 'Edit', edit_screencast_path(screencast) %></td>
-    <td><%= link_to 'Destroy', screencast, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Screencast', new_screencast_path %>

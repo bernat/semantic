@@ -21,7 +21,7 @@
 	<h1>Últims Episodis</h1>
 	<ul>
 	<% Episode.find(:all, :order => 'number desc', :limit => 5).each do |episode| %>
-	 <li><%= link_to "#" + episode.number.to_s + ": " + episode.title, episode %></li>
+	 <li class="podcast"><%= link_to "Podcast #" + episode.number.to_s, episode %></li>
 	<% end  %>
   </ul>
 	<br />
@@ -34,7 +34,7 @@
 	<h1>Screencasts</h1>
 	<ul>
 	<% Screencast.find(:all, :order => 'published_at desc', :limit => 5).each do |screencast| %>
-	 <li><%= link_to screencast.title, screencast %></li>
+	 <li class="screencast"><%= link_to screencast.ref, screencast %></li>
 	<% end  %>
   </ul>
 </div>

@@ -1,0 +1,20 @@
+<%= div_for screencast, :class => cycle('senar', 'parell') do %>
+  <p class="data">
+    <%= pretty_date screencast.published_at %>
+  </p>
+  <h3><%= link_to "#{screencast.title}", screencast %></h3>
+
+  <% if !list %>
+  <div class="objecte_centrat">
+    <%= raw screencast.embedded %>
+  </div>
+  <% end %>
+    <%= raw markdown(screencast.description) %>
+  <% if !list && !screencast.notes.blank? %>
+    <hr />
+    <a style="color:#333" name="shownotes"><h4>Notes</h4></a>
+    <%= raw markdown(screencast.notes) %>
+  <% else  %>
+    <%= link_to "Veure Tutorlal", screencast %>
+  <% end %>   
+<% end %>

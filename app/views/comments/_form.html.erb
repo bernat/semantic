@@ -1,5 +1,6 @@
-<% form_for Comment.new(:episode => episode), :remote => true do |f| %>
+<% form_for Comment.new(:episode => episode, :screencast => screencast), :remote => true do |f| %>
   <%= f.hidden_field :episode_id %>
+  <%=  f.hidden_field :screencast_id %>
   <%= f.hidden_field :antispam_question, :value => @antispam_question %>		
   <%= f.label :name, "Nom" %>
   <%= f.text_field :name %>

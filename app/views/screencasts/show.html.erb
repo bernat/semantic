@@ -1,45 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @screencast.title %>
-</p>
-
-<p>
-  <b>Permalink:</b>
-  <%= @screencast.permalink %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @screencast.description %>
-</p>
-
-<p>
-  <b>Published at:</b>
-  <%= @screencast.published_at %>
-</p>
-
-<p>
-  <b>Asset file name:</b>
-  <%= @screencast.asset_file_name %>
-</p>
-
-<p>
-  <b>Asset content type:</b>
-  <%= @screencast.asset_content_type %>
-</p>
-
-<p>
-  <b>Asset file size:</b>
-  <%= @screencast.asset_file_size %>
-</p>
-
-<p>
-  <b>Asset updated at:</b>
-  <%= @screencast.asset_updated_at %>
-</p>
+<%= render :partial => @screencast, :locals => { :list => false } %>
 
 
-<%= link_to 'Edit', edit_screencast_path(@screencast) %> |
-<%= link_to 'Back', screencasts_path %>
+<div id="comments">
+  <span id="comments_count"><%= pluralize(@screencast.comments.count, "Comentari") %></span>
+  <%= render @screencast.comments %>
+</div>
+
+<div id="comment-notice"></div>
+
+
+
+<div id="triangle"></div>
+<a name="comentaris" id="comment_now" href="#comentaris">Vull comentar!</a>
+<div id="form_comentaris">
+  <span style="float:right;"><a id="tanca" href="#comentaris">tanca</a></span>
+
+  <h2>Digues-hi la teva!</h2>
+  <%= render :partial => 'comments/form', :locals => { :screencast => @screencast, :episode => nil } %>
+</div>
+
+
+<%= content_for :admin do %>
+<%= link_to 'Modifica episodi', edit_screencast_path(@screencast) %>
+| <%= link_to 'Elimina', @screencast, :confirm => 'Segur?', :method => :delete %>
+<% end %>
+
+

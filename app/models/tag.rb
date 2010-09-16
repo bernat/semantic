@@ -1,6 +1,7 @@
 class Tag < ActiveRecord::Base
   has_many :taggings, :dependent => :destroy
   has_many :episodes, :through => :taggings
+  has_many :screencasts, :through => :taggings
 
   validates :name, :presence => true
 

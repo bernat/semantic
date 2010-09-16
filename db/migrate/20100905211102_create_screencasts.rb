@@ -3,13 +3,11 @@ class CreateScreencasts < ActiveRecord::Migration
     create_table :screencasts do |t|
       t.string :title
       t.string :permalink
+      t.string :ref
       t.text :description
+      t.text :notes
       t.datetime :published_at
-      t.string :asset_file_name
-      t.string :asset_content_type
-      t.integer :asset_file_size
-      t.datetime :asset_updated_at
-
+      t.string :embedded
       t.timestamps
     end
   end

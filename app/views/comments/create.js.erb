@@ -12,7 +12,12 @@
 	$("#comment-notice").fadeIn(3000);	
 
 	/* Replace the count of comments */
+<% if !@comment.episode.blank? %>
 	$("#comments_count").html("<%= pluralize(@comment.episode.comments.count, 'Comentari') %>");
+<% end %>
+<% if !@comment.screencast.blank? %>
+	$("#comments_count").html("<%= pluralize(@comment.screencast.comments.count, 'Comentari') %>");
+<% end %>
 
 	/* Add the new comment to the bottom of the comments list */
 	$("#comments").append("<%= escape_javascript(render(@comment)) %>");

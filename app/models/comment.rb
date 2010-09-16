@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :episode
+  belongs_to :screencast
   attr_accessor :antispam
   attr_accessor :antispam_question
   

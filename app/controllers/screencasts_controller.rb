@@ -1,4 +1,5 @@
 class ScreencastsController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]  
   # GET /screencasts
   # GET /screencasts.xml
   def index
@@ -14,7 +15,7 @@ class ScreencastsController < ApplicationController
   # GET /screencasts/1.xml
   def show
     @screencast = Screencast.find(params[:id])
-
+    @antispam_question = rand(5) + 1
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @screencast }
