@@ -7,7 +7,7 @@ class Screencast < ActiveRecord::Base
   validates_presence_of :permalink
   
   def to_param
-    "#{self.id}-#{self.permalink}"
+    "#{self.permalink}"
   end
 
   def tag_names=(names)
