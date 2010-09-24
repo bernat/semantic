@@ -14,7 +14,7 @@ class ScreencastsController < ApplicationController
   # GET /screencasts/1
   # GET /screencasts/1.xml
   def show
-    @screencast = Screencast.find(params[:id])
+    @screencast = Screencast.find_by_permalink(params[:id])
     @antispam_question = rand(5) + 1
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +35,7 @@ class ScreencastsController < ApplicationController
 
   # GET /screencasts/1/edit
   def edit
-    @screencast = Screencast.find(params[:id])
+    @screencast = Screencast.find_by_permalink(params[:id])
   end
 
   # POST /screencasts
@@ -57,7 +57,7 @@ class ScreencastsController < ApplicationController
   # PUT /screencasts/1
   # PUT /screencasts/1.xml
   def update
-    @screencast = Screencast.find(params[:id])
+    @screencast = Screencast.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @screencast.update_attributes(params[:screencast])
@@ -73,7 +73,7 @@ class ScreencastsController < ApplicationController
   # DELETE /screencasts/1
   # DELETE /screencasts/1.xml
   def destroy
-    @screencast = Screencast.find(params[:id])
+    @screencast = Screencast.find_by_permalink(params[:id])
     @screencast.destroy
 
     respond_to do |format|
