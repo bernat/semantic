@@ -1,14 +1,10 @@
-source 'http://gemcutter.org'
+source 'http://rubygems.org'
 
-gem "rails", "3.0.0"
+gem 'rails', '3.0.0'
 gem "bluecloth", "2.0.7"
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git", :branch => "rails3"
+gem "paperclip", '~> 2.3.3'
 gem "will_paginate", "~> 3.0.pre2"
+gem 'dynamic_form', :git => 'http://github.com/rails/dynamic_form.git'
+gem 'hashie'
 
-group :development do
-  gem "sqlite3-ruby"
-end
-
-group :production do
-  gem 'mysql'
-end
+gem 'sqlite3-ruby', :require => 'sqlite3'

@@ -1,0 +1,14 @@
+defaults: &defaults
+  authentication:
+    username: "semantic"
+    password: "94fb17e32b412262e8df195e1e0561dd31ed1c36" # semantic
+
+development:
+  <<: *defaults
+
+test: &testing
+  <<: *defaults
+
+production:
+  <<: *defaults
+
