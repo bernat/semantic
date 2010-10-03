@@ -1,8 +1,9 @@
 class Episode < ActiveRecord::Base
   include Paperclip
-  has_many :comments
+
+  has_many :comments, :as => :commentable
   has_many :taggings, :dependent => :destroy
-  has_many :tags, :through => :taggings  
+  has_many :tags, :through => :taggings
   attr_accessor :tag_names
 
   cattr_reader :per_page
@@ -20,9 +21,9 @@ class Episode < ActiveRecord::Base
   def to_param
     "#{self.id}-#{self.permalink}"
   end
-  
+
   def tag_names=(names)
     self.tags = Tag.with_names(names.split(/\s+/))
   end
-  
+
 end

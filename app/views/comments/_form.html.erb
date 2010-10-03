@@ -1,6 +1,6 @@
-<% form_for Comment.new(:episode => episode, :screencast => screencast), :remote => true do |f| %>
-  <%= f.hidden_field :episode_id %>
-  <%=  f.hidden_field :screencast_id %>
+<% form_for Comment.new(:commentable => commentable), :remote => true do |f| %>
+  <%= f.hidden_field :commentable_id %>
+  <%= f.hidden_field :commentable_type %>
   <%= f.label :name, "Nom" %>
   <%= f.text_field :name %>
   <%= f.label :email, "Email" %>

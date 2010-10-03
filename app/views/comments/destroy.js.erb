@@ -1,2 +1,2 @@
 $('#comment_<%= @comment.id %>').fadeOut();
-$("#comments_count").html("<%= pluralize(@comment.episode.comments.count, 'Comentari') %>");
+$("#comments_count").html("<%= pluralize(@comment.commentable.comments.count, 'Comentari') %>");

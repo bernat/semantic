@@ -18,7 +18,7 @@
   <span style="float:right;"><a id="tanca" href="#comentaris">tanca</a></span>
 
   <h2>Digues-hi la teva!</h2>
-  <%= render :partial => 'comments/form', :locals => { :screencast => @screencast, :episode => nil } %>
+  <%= render :partial => 'comments/form', :locals => { :commentable => @screencast } %>
 </div>
 
 
@@ -26,5 +26,3 @@
 <%= link_to 'Modifica episodi', edit_screencast_path(@screencast) %>
 | <%= link_to 'Elimina', @screencast, :confirm => 'Segur?', :method => :delete %>
 <% end %>
-
-

@@ -10,10 +10,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101002143022) do
+ActiveRecord::Schema.define(:version => 20101003153804) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "episode_id"
     t.string   "name"
     t.string   "email"
     t.text     "content"
@@ -22,7 +21,8 @@ ActiveRecord::Schema.define(:version => 20101002143022) do
     t.string   "user_referrer"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "screencast_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   create_table "episodes", :force => true do |t|
