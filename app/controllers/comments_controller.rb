@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate, :only => [:update, :destroy]
+  before_filter :authenticate_user!, :only => [:update, :destroy]
   
   def index
     @comments = Comment.find(:all, :order => "created_at DESC")      
