@@ -1,9 +1,7 @@
-<% if @errors %>
+<% if @comment.new_record? %>
 	$("#comment-notice").hide();
-	$("#comment-notice").html('<div class="flash error"><%= escape_javascript(flash.delete(:notice)) %></div>');
+	$("#comment-notice").html('<div class="flash error"><%= escape_javascript(flash.delete(:alert)) %></div>');
 	$("#comment-notice").fadeIn(2000);
-	
-
 <% else %>
 
 	/* Insert a notice between the last comment and the comment form */
@@ -12,12 +10,12 @@
 	$("#comment-notice").fadeIn(3000);	
 
 	/* Replace the count of comments */
-<% if !@comment.episode.blank? %>
-	$("#comments_count").html("<%= pluralize(@comment.episode.comments.count, 'Comentari') %>");
-<% end %>
-<% if !@comment.screencast.blank? %>
-	$("#comments_count").html("<%= pluralize(@comment.screencast.comments.count, 'Comentari') %>");
-<% end %>
+  <% if !@comment.episode.blank? %>
+  	$("#comments_count").html("<%= pluralize(@comment.episode.comments.count, 'Comentari') %>");
+  <% end %>
+  <% if !@comment.screencast.blank? %>
+  	$("#comments_count").html("<%= pluralize(@comment.screencast.comments.count, 'Comentari') %>");
+  <% end %>
 
 	/* Add the new comment to the bottom of the comments list */
 	$("#comments").append("<%= escape_javascript(render(@comment)) %>");

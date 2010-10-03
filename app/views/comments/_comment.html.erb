@@ -1,7 +1,7 @@
 <%= div_for comment do %>
 
   <div class="gravatar_comentaris">
-    <%= raw gravatar(comment.email, :size => 60, :default => "http://#{request.host_with_port}/images/no_gravatar.jpg")%>
+    <%= raw gravatar(comment.email, :size => 60, :default => 'mm')%>
   </div>
   <span class="comment-by">
     <strong><%= comment.name %></strong>
@@ -12,7 +12,7 @@
   <%= content_tag(:div, format_comment(comment.content), :class => "comment-body") %>
 
   <% if logged_in? %>
-    <%= link_to 'esborra',comment_path(comment), :method => :delete, :class => "delete", :remote => true  %>
+    <%= link_to 'esborra',comment, :method => :delete, :class => "delete", :remote => true  %>
   <% end %>
 
 <% end %>

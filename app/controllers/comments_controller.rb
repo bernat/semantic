@@ -1,29 +1,14 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:update, :destroy]
-  
-  def index
-    @comments = Comment.find(:all, :order => "created_at DESC")      
-  end
-  
+  before_filter :authenticate_user!, :only => :destroy
+
   def create
-    @comment = Comment.create!(params[:comment])
-    flash[:notice] = "Gràcies per comentar!"
-    @comment.request = request
-    
-    respond_to do |format|
-      format.html { redirect_to episode_path(@comment.episode) }
-      format.js 
+    @comment = Comment.new(params[:comment])
+
+    if @comment.save
+      flash[:notice] = "Gràcies per comentar!"
+    else
+      flash[:alert] = "Hi ha errors al comentari i no es publicarà. Verifica que has omplert TOTS els camps correctament."
     end
-    
-    rescue ActiveRecord::RecordInvalid
-      @errors = true
-      flash[:notice] = "Hi ha errors al comentari i no es publicarà. Verifica que has omplert TOTS els camps correctament."    
-
-  end
-
-  def update
-    @comment = Comment.find(params[:id])
-    @comment.save
 
     respond_to do |format|
       format.html { redirect_to episode_path(@comment.episode) }
