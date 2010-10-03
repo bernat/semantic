@@ -1,7 +1,5 @@
 class Tag < ActiveRecord::Base
   has_many :taggings, :dependent => :destroy
-  has_many :episodes, :through => :taggings
-  has_many :screencasts, :through => :taggings
 
   validates :name, :presence => true
 
@@ -9,5 +7,9 @@ class Tag < ActiveRecord::Base
     names.map do |name|
       Tag.find_or_create_by_name(name)
     end
+  end
+
+  def taggables
+    taggings.collect(&:taggable).uniq
   end
 end
