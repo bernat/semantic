@@ -4,7 +4,7 @@
   </p>
   <h3><%= link_to "\##{episode.number} #{episode.title}", episode %></h3>
 
-  <% if !list && episode.asset? %>
+  <% if @episode && episode.asset? %>
     <p id="player_<%= episode.id %>">MP3</p>
     <script type="text/javascript">
       $(document).ready(function() {
@@ -14,25 +14,25 @@
     <% end %>
 
     <%= raw markdown(episode.description) %>
-    <% if list %>
-    <p>
-      <%= link_to "Notes de l'episodi", "#{episode_path(episode)}#shownotes" if episode.notes %>
-      | <%= link_to "#{pluralize(episode.comments.count, "Comentari")}", "#{episode_path(episode)}#comentaris" %>
-    </p>
+    <% unless @episode %>
+      <p>
+        <%= link_to "Notes de l'episodi", "#{episode_path(episode)}#shownotes" if episode.notes %>
+        | <%= link_to "#{pluralize(episode.comments.count, "Comentari")}", "#{episode_path(episode)}#comentaris" %>
+      </p>
     <% else %>
     <% unless episode.notes.empty? %>
-    <a style="color:#333" name="shownotes"><h4>Notes de l'episodi</h4></a>
-    <%= raw markdown(episode.notes) %>
-    <div id="tags">
-      <% if !episode.tags.blank? %>
-      <ul>
-        <% for tag in episode.tags %>
-        <li><%= link_to	print_tag(tag), tag_path(tag.name) %></li>
-        <% end %>
-      </ul>
-      <% end %>
-    </div>
+      <a style="color:#333" name="shownotes"><h4>Notes de l'episodi</h4></a>
+      <%= raw markdown(episode.notes) %>
     <% end %>
   <% end %>
+  <div id="tags">
+    <% unless episode.tags.blank? %>
+    <ul>
+      <% episode.tags.each do |tag| %>
+        <li><%= link_to	print_tag(tag), tag_path(tag.name) %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
   <%=raw "#{link_to("MP3", episode.asset.url)} (#{number_to_human_size episode.asset.size})" if episode.asset? %>
 <% end %>

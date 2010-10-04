@@ -4,9 +4,7 @@ class Tag < ActiveRecord::Base
   validates :name, :presence => true
 
   def self.with_names(names)
-    names.map do |name|
-      Tag.find_or_create_by_name(name)
-    end
+    names.collect { |name| Tag.find_or_create_by_name(name) }
   end
 
   def taggables
