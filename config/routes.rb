@@ -11,10 +11,8 @@ Semantic::Application.routes.draw do
   resources :tags
 
   match 'que-es-semantic', :to => 'pages#about', :as => :about
-  match 'bernat', :to => 'pages#bernat'
-  match 'jordi', :to => 'pages#jordi'
-  match 'masumi', :to => 'pages#masumi'
-  match 'membres', :to => 'pages#membres', :as => :membres
+  match ':participant', :to => 'pages#participant', :constraints => { :participant => /(bernat|jordi|masumi)/ }
+  match 'membres', :to => 'pages#members', :as => :membres
 
   root :to => "episodes#index"
 end
