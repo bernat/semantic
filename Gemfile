@@ -8,4 +8,10 @@ gem 'dynamic_form', :git => 'http://github.com/rails/dynamic_form.git'
 gem 'hashie'
 gem 'devise', '~> 1.1.3'
 
+group :test, :development do
+  gem 'rspec-rails', '>= 2.0.0.beta.22'
+  gem 'factory_girl', '>= 2.0.0.beta1'
+  gem 'autotest'
+end
+
 gem 'sqlite3-ruby', :require => 'sqlite3'
