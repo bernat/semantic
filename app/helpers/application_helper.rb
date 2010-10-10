@@ -1,5 +1,11 @@
 module ApplicationHelper
 
+  def title(page_title)
+    content_for :title do
+      page_title
+    end
+  end
+
   def gravatar(email, options={})
       src = h(gravatar_url(email, options))
       [:class, :alt, :size].each { |opt| options[opt] = h(options[opt]) }
