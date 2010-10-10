@@ -35,21 +35,6 @@ module ApplicationHelper
       end
     end
 
-    def antispam_question(num)
-      case num
-      when 1 #270
-        "Resultat de sumar 240 més 30"
-      when 2 #50
-        "Resultat de restar 100 menys 50"
-      when 3 #140
-        "Resultat de sumar 40 a 100"
-      when 4 #380
-        "Resultat de sumar 80 a 300"
-      when 5 #1000
-        "Resultat de sumar 500 + 500"
-      end
-    end
-    
     def print_tag(tag)
           tag.name.gsub("_", " ")
     end

@@ -15,7 +15,6 @@ class ScreencastsController < ApplicationController
   # GET /screencasts/1.xml
   def show
     @screencast = Screencast.find_by_permalink(params[:id])
-    @antispam_question = rand(5) + 1
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @screencast }

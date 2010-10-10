@@ -1,7 +1,6 @@
 <% form_for Comment.new(:episode => episode, :screencast => screencast), :remote => true do |f| %>
   <%= f.hidden_field :episode_id %>
   <%=  f.hidden_field :screencast_id %>
-  <%= f.hidden_field :antispam_question, :value => @antispam_question %>		
   <%= f.label :name, "Nom" %>
   <%= f.text_field :name %>
   <%= f.label :email, "Email" %>
@@ -10,8 +9,8 @@
   <a href="#comment-markdown-help" rel="facebox" class="comments-format-howto">Com donar format al comentari</a>
   <br />
   <%= f.text_area :content %><br />
-  <%= f.label :antispam, "#{antispam_question(@antispam_question)}" %>
-  <%= f.text_field :antispam, :style => "width:30px;margin-left:10px;" %><br /><br />
+  <%= f.label :intelligence, "En quin idioma s'emet aquest Podcast?" %>
+  <%= f.text_field :intelligence %><br /><br />
   <%= f.submit "Afegeix comentari" %>
 <% end %>
 
