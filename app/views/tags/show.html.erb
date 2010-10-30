@@ -1,4 +1,4 @@
-<%= title "Episodis etiquetats amb " + @tag.name %>
+<% title "Episodis etiquetats amb " + @tag.name %>
 <h3>Episodis etiquetats amb <i style="background:yellow;"><%= print_tag(@tag) %></i></h3>
 
 <%= render :partial => @episodes, :locals => { :list => true } %>
