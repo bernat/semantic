@@ -3,7 +3,7 @@
 <h1>Episodis podcast</h1>
  <%= render :partial => @episodes, :locals => { :list => true } %>
 
-<%= will_paginate @episodes, :prev_label => "&laquo; Anterior", :next_label => "Següent &raquo;" %>
+<%= will_paginate @episodes, :previous_label => "&laquo; Anterior", :next_label => "Següent &raquo;" %>
 
 <% content_for :admin do %>
   <%= link_to 'Afegir episodi', new_episode_path %>
