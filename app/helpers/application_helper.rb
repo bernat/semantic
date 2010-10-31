@@ -76,4 +76,8 @@ module ApplicationHelper
 
     markdown(sanitize(text)).html_safe
   end
+
+  def copyright_year(year = 2010)
+    "#{year} #{(" - " + Time.now.year.to_s) if Time.now.year > year}"
+  end
 end

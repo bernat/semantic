@@ -85,22 +85,18 @@
         </div>
         <div class="column grid_3">
            <img src="/images/ocelltwitter.png" alt="twitter bird"/>
-          
         </div>
         <div id="twitterfeed" class="column grid_5">
-          
           <div id="feeds"></div>
-       
         </div>
       </div>
     </div>
     <div id="credits">
       <p>
-        &copy; Semantic Podcast 2010 <%= (" - " + Time.now.year.to_s) if Time.now.year > 2010 %>. Tots els drets reservats.
+        &copy; Semantic Podcast <%= copyright_year %>. Tots els drets reservats.
       </p>
     </div>
   </div>
-
   <%= render "shared/analytics" %>
 </body>
 </html>
