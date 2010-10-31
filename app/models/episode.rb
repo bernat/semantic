@@ -6,9 +6,7 @@ class Episode < ActiveRecord::Base
 
   attr_accessor :tag_names
 
-  has_attached_file :asset,
-    :path => ":rails_root/public/system/episides/episode:id.mp3",
-    :url => "/system/episides/episode:id.mp3"
+  has_attached_file :asset, $paperclip_settings
 
   # Validations
   validates_presence_of :permalink
