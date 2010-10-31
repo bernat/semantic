@@ -13,6 +13,7 @@ puts "Adding 15 Sample Episodes..."
 
   rand(5).times do |ci|
     person = emails.sample
-    e.comments.create! :name => person.split('@').first.humanize, :email => person, :content => "Interesting..."
+    c = e.comments.new :name => person.split('@').first.humanize, :email => person, :content => "Interesting..."
+    c.save(false)
   end
 end

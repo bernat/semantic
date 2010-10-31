@@ -7,6 +7,7 @@ gem "will_paginate", "~> 3.0.pre2"
 gem 'dynamic_form', :git => 'http://github.com/rails/dynamic_form.git'
 gem 'hashie'
 gem 'devise', '~> 1.1.3'
+gem 'semantic_antispam'
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.0.0.beta.22'
