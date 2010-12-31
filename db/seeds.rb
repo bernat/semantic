@@ -1,6 +1,10 @@
 emails = %w(bernat@itnig.net jordi@jrom.net mutsuda@gmail.com david@loudthinking.com juanico@ramires.cat)
 tags = %w(Rails Web Apple Database Javascript Microsoft Google)
 
+emails.select {|e| e.match(/(bernat|jordi|mutsuda)/)}.each do |email|
+  User.create! :email => email, :password => 'semantic', :password_confirmation => 'semantic'
+end
+
 puts "Adding 15 Sample Episodes..."
 15.times do |i|
   e = Episode.create! :title => "Episodi #{i}",
