@@ -15,4 +15,6 @@ Semantic::Application.routes.draw do
   match 'membres', :to => 'pages#members', :as => :membres
 
   root :to => "episodes#index"
+
+  match '/system/episides/:episode.mp3' => redirect("http://assets.semantic.cat/episodes/%{episode}.mp3") if Rails.env.production?
 end
