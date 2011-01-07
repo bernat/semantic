@@ -10,4 +10,8 @@ class Tag < ActiveRecord::Base
   def taggables
     taggings.collect(&:taggable).uniq
   end
+  
+  def to_s
+    name
+  end
 end
